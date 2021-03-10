@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <title>lecturer header</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/losalogo.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body style="font-size: small;background: white; color: black">
+        <b:form>
+            <b:navBar brand="Cloudsoft Consulting Ltd. | Portal" brandHref="https://cloudsoftconsulting.com.ng/" style="background: darkblue; color: white; font-family: 'Kanit', sans-serif; font-size: x-larger">
+                <b:navbarLinks style="background: whitesmoke; color: black">
+                    <b:navLink  value="Dashboard" icon="home" outcome="lecturerDashboard"></b:navLink>
+                    <b:navLink value="Upload_Assignment" outcome="upload_assignment" ></b:navLink>
+                      <b:navLink value="Upload_Material" outcome="upload_materials" ></b:navLink>
+                       <b:navLink value="view submitted assignments" outcome="view_submitted_assignment" ></b:navLink>
+                     <b:commandButton class="form-control"  tooltip="click to signout" icon="log-out" value="Signout" style="background: red; color: white" action="#{rootUserLoginBEAN.signoutMethod()}"/>
+
+                </b:navbarLinks>
+            </b:navBar>
+        </b:form>
+
+        <!-- the bottom bar -->
+
+    </h:body>
+
+</html>
+

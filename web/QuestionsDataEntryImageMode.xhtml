@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Question Data Entry Image Mode</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: #99ff99;">
+
+        <div align="left">
+
+
+            <h:form id="questiondataentryForm" enctype="multipart/form-data" style="align-items: flex-start;"> 
+                <p:panel  id="QuestionDEntryPanel" header="Question Data Entry - Image Mode" style="font-size: smaller;left:17%; margin-left: -100px; width: 850px; position: relative; background: #ccffcc">
+
+                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+                    <h:panelGrid columns="2"  cellpadding="1">
+
+                        <p:spacer/>
+                        <p:commandButton value="Search" action="#{questiondataentrySearchBean.subjectSearchDMethod()}" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Subject" value="Subject: " style="color: #333333"/>
+                        <h:inputText id="Subject" value="#{questiondataentrySearchBean.subject}"  style="background: #cccccc"/>
+
+                        <h:outputLabel for="Year" value="Year: " style="color: #333333"/>
+                        <h:outputText id="Year" value="#{questiondataentrySearchBean.year}"  style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Time" value="Time: " style="color: #333333"/>
+                        <h:outputText id="Time" value="#{questiondataentrySearchBean.time}" style="background: #cccccc"></h:outputText>
+
+                        <br/>
+
+                        <p:panelGrid   columns="1">
+                            <p:graphicImage  id="InstructionImage" value="#{scannedDocUpload.myInstructions}"  cache="false"/>
+
+                        </p:panelGrid>
+                        <p:spacer/>
+                        <br/>
+
+                    </h:panelGrid>
+
+                    <p:panelGrid columns="9" style="font-size: small">
+
+                        <h:outputLabel for="Instructions" value="Instructions: " style="color: #336600" />
+
+                        <p:fileUpload value="#{scannedDocUpload.file}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="instructions" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadInstructionsScnDoc()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                        <h:outputLabel for="Subjectid" value="SID: " style="color: #333333"/>
+                        <p:inputText id="Subjectid" value="#{questiondataentrySearchBean.sid}" size="1" required="true" />
+
+                        <h:outputLabel for="questionNo" value="Q. No: " />
+                        <p:inputText id="questionNo" value="#{questionsDataEntryImageModeBEAN.questionNo}" size="1" required="true"/>
+
+                        <h:outputLabel for="correctAnswer" value="Correct Ans: " />
+                        <p:inputText id="correctAnswer" value="#{questionsDataEntryImageModeBEAN.correctAnswer}" size="1" required="true"/>
+
+                        <p:growl id="msj" showDetail="true" autoUpdate="true" />
+
+                    </p:panelGrid>
+
+                    <p:separator />
+                    <br/>
+
+                    Question:
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="QuestionImage" value="#{scannedDocUpload.myQuestion}"  cache="false"/>
+
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="Question" value="Question: " style="color: #ff66cc"/>
+
+                        <p:fileUpload value="#{scannedDocUpload.questionFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE Ques..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="QuestionUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadQuestion()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+                    <br/>
+
+                    <p:separator/>
+                    Choice A: 
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="ChoiceAImage" value="#{scannedDocUpload.myChoiceA}"  cache="false"/>
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="ChoiceB" value="Choice A: " style="color: #993300"/>
+
+                        <p:fileUpload value="#{scannedDocUpload.choiceAFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ChoiceA..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="ChoiceAUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadChoiceA()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+
+                    <p:separator/>
+                    <br/>
+
+                    Choice B: 
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="ChoiceBImage" value="#{scannedDocUpload.myChoiceB}"  cache="false"/>
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="ChoiceB" value="Choice B: " style="color: #333333"/>
+
+                        <p:fileUpload value="#{scannedDocUpload.choiceBFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ChoiceB..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="ChoiceBUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadChoiceB()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+
+                    <p:separator/>
+                    <br/>
+
+
+                    Choice C: 
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="ChoiceCImage" value="#{scannedDocUpload.myChoiceC}"  cache="false"/>
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="ChoiceC" value="Choice C: " style="color:#ff3333"/>
+
+                        <p:fileUpload value="#{scannedDocUpload.choiceCFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ChoiceC..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="ChoiceCUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadChoiceC()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+
+                    <p:separator/>
+                    <br/>
+
+
+                    Choice D: 
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="ChoiceDImage" value="#{scannedDocUpload.myChoiceD}"  cache="false"/>
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="ChoiceD" value="Choice D: " style="color: #ff66cc" />
+
+                        <p:fileUpload value="#{scannedDocUpload.choiceDFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ChoiceD..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="ChoiceDUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadChoiceD()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+
+                    <p:separator/>
+                    <br/>
+
+
+                    Choice E: 
+                    <p:panelGrid   columns="1">
+                        <p:graphicImage id="ChoiceEImage" value="#{scannedDocUpload.myChoiceE}"  cache="false"/>
+                    </p:panelGrid>
+                    <p:spacer/>
+                    <br/>
+
+                    <p:panelGrid columns="7" style="font-size: small">
+                        <h:outputLabel for="ChoiceE" value="Choice E: " style="color: #3333ff"/>
+
+                        <p:fileUpload value="#{scannedDocUpload.choiceEFile}" mode="simple" dragDropSupport="false" style="font-size: small; color: #ff3333;" 
+                                      label="BROWSE ChoiceE..." update="messages" sizeLimit="15360" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                      requiredMessage="Please, upload your picture"   fileLimitMessage="Maximum number of images exceeded" 
+                                      required="true"/>
+
+                        <p:commandButton id="ChoiceEUpload" value="Upload" ajax="false"  action="#{scannedDocUpload.uploadChoiceE()}" style="background: #66ff66;font-size: small;color: #000000;"/>
+
+                    </p:panelGrid>
+
+                    <br />
+                    <p:separator />
+
+                    <p:commandButton value="Submit" action="#{questionsDataEntryImageModeBEAN.submitquestiondataentry()}"  ajax="true" resetValues="true" style="color: white;background: #336600" />                   
+                    <br/>
+                    <p:spacer width="25px"/>
+
+                    <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+
+                </p:panel>
+
+            </h:form>
+
+        </div>
+
+    </h:body>
+</html>
+

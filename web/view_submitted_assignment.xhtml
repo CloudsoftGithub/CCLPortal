@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>view_submitted_assignment</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: lightcyan">
+
+        <div>
+            <b:form>
+                <ui:include src="headerLecturerDashboard.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container fluid="true" >
+            <div>
+                <p:spacer height="20px" /> <!-- this is a space  -->
+            </div>
+            <b:form id="viewAssignmentForm" enctype="multipart/form-data">
+
+                <div class="col-sm-3">
+
+                    <b:messages id="msg1" />
+                    <b:growl id="msg"  showDetail="true"/>
+                    <p:panel style="background: lightsteelblue" id="viewAssignmentPanel">
+                        <h4 align="center" style="background: red; color: lightcyan; font-family: serif"> View/Search for The Submitted Assignments [by program, doc and batch]  </h4>       
+                        <br style="height: 30px"  />
+
+
+                        <b:selectOneMenu id="program" label="Program:" value="#{checkforSubmittedAssignments.programm}" class="form-control" required="true" required-message="Pls, select program"  >
+                            <f:selectItem itemLabel="Select program" itemValue=""  />
+                            <f:selectItem itemLabel="Advanced ICT Training" itemValue="Advanced ICT Training" />
+                            <f:selectItem itemLabel="Medium ICT Training" itemValue="Medium ICT Training" />
+                            <f:selectItem itemLabel="Basic ICT Training" itemValue="Basic ICT Training" />
+                            <f:selectItem itemLabel="Java SE Training" itemValue="Java SE Training" />
+                            <f:selectItem itemLabel="Java EE Training" itemValue="Java EE Training" />
+                            <f:selectItem itemLabel="C# Programming Training" itemValue="C# Programming Training" />
+                            <f:selectItem itemLabel="C++ Programming Training" itemValue="C++ Programming Training" />
+                            <f:selectItem itemLabel="C Programming Training" itemValue="C Programming Training-008" />
+                            <f:selectItem itemLabel="Phyton Programming Training" itemValue="Phyton Programming Training" />
+                            <f:selectItem itemLabel="PHP with CodeIgniter" itemValue="PHP with CodeIgniter" />
+                            <f:selectItem itemLabel="PHP Programming Training" itemValue="PHP Programming Training" />
+                            <f:selectItem itemLabel="Other Programming Languages" itemValue="Other Programming Languages" />
+                            <f:selectItem itemLabel="Bootfaces Training" itemValue="Bootfaces Training" />
+                            <f:selectItem itemLabel="JSF/Primefaces Training" itemValue="JSF/Primefaces Training" />
+                            <f:selectItem itemLabel="Android Dev. Training" itemValue="Android Dev. Training" />
+                            <f:selectItem itemLabel="Software Dev. Traing" itemValue="Software Dev. Traing" />
+                            <f:selectItem itemLabel="Stand-alone Systems" itemValue="Stand-alone Systems" />
+                            <f:selectItem itemLabel="Network-based Systems" itemValue="Network-based Systems" />
+                            <f:selectItem itemLabel="AWS Cloud Dev. Training" itemValue="AWS Cloud Dev. Training" />
+                            <f:selectItem itemLabel="Jelastic Cloud Dev. Training" itemValue="Jelastic Cloud Dev. Training" />
+                            <f:selectItem itemLabel="General Cloud Hosting Training" itemValue="General Cloud Hosting Training" />
+                            <f:selectItem itemLabel="Statistical Packages Training" itemValue="Statistical Packages Training" />
+                            <f:selectItem itemLabel="Diploma In Microsoft Packages" itemValue="Diploma In Microsoft Packages" />
+                            <f:selectItem itemLabel="Web Development Training" itemValue="Web Development Training"/>
+                            <f:selectItem itemLabel="Cyber Security" itemValue="Cyber Security"/>
+                            <f:selectItem itemLabel="Webinar Training" itemValue="Webinar Training"/>
+                            <f:selectItem itemLabel="NYSC Trainee" itemValue="NYSC Trainee"/>
+                        </b:selectOneMenu>
+
+                        <b:dateTimePicker show-time="false"   id="dateofCommencement" value="#{checkforSubmittedAssignments.doc}"  p:placeholder="Date of commencement"   required="true" label="Date of commencement:" required-message="Pls, supply the date of commencement!"/>
+
+                        <b:selectOneMenu id="Batch" tooltip="supply your Batch" label="Batch:" value="#{checkforSubmittedAssignments.batch}" class="form-control" required="true" required-message="supply your Batch!"  >
+                            <f:selectItem itemLabel="Select Batch" itemValue=""  />
+                            <f:selectItem itemLabel="Batch A" itemValue="Batch A" />
+                            <f:selectItem itemLabel="Batch B" itemValue="Batch B" />
+                            <f:selectItem itemLabel="Batch C" itemValue="Batch C" />
+                            <f:selectItem itemLabel="Batch D" itemValue="Batch D" />
+                            <f:selectItem itemLabel="Batch E" itemValue="Batch E" />
+                            <f:selectItem itemLabel="Batch F" itemValue="Batch F" />
+                        </b:selectOneMenu>
+
+
+                        <p:separator  />
+                        <p:commandButton    ajax="false" style=" background: blue; color: whitesmoke"   value="View " process="@form"  update="msg1,msg,AssignmentDataTabe"/>
+
+                    </p:panel>
+
+                </div>
+
+
+                <div class="col-sm-9" align="center">
+
+                    <b:messages id="msgs" />
+                    <b:growl id="msgs1"  showDetail="true"/>
+
+                    <p:panel id="viewAssignmenPanel"  >
+                        <h2 align="center" style="background: red; color: whitesmoke"> View The Submitted Assignments </h2>        
+                        <!---  start of data table -->
+
+                        <br style="height: 30px" /> 
+
+                        <b:dataTable id="AssignmentDataTabe"   value="#{checkforSubmittedAssignments.assignments}" ajax="false"   var="item"   style="width:800px; background: lightsteelblue">
+
+                            <f:facet name="header">
+                                <h:outputText value="Assignment" />
+                            </f:facet>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="SID" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.sid}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Username" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.username}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Program" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.programm}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Batch" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.batch}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Title" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.title}"></h:outputText>
+                            </b:column>
+
+
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Date" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.date}"></h:outputText>
+                            </b:column>
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="File" ></h:outputText>
+                                </f:facet>
+
+
+                                <pe:documentViewer id="docViewer"  value="#{checkforSubmittedAssignments.file}" width="500"   cache="false"  />
+
+                            </b:column>
+
+                        </b:dataTable> 
+
+                        <!--- end of data table-->
+                    </p:panel> 
+
+                </div>
+
+
+            </b:form>  
+        </b:container>
+
+    </h:body>
+</html>
+

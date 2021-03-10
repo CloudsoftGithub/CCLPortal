@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>User Validity Test</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body style="background:  lightblue">
+        <b:container fluid="true" style="background: #ccccff">
+            <div align="center">
+                <b:form  id="valityForm" style="background: #ccccff;" >
+                    <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="index" />  
+
+                    <b:panel id="ValidityPanel" title="User Verification"  style=";height: 750px; width: 580px; background: #ccffcc; align-self: center;animation-fill-mode: both;font-size: smaller">
+                        <h4 align="center"   style="background: #ccccff; font-family: cursive" > Welcome: <br/>  </h4>
+                        <div  style="width: 120px" align="center">
+                            <h4 align="left" style="color: #cc00cc"> <h:inputText id="myusername" value="#{loginBean.signin.username}"  size="5" style="background: #ccccff; font-family: cursive;align-content: center"  />   </h4>               
+                        </div>
+                        <h4 align="center" style="color: #660066; font-family: inherit">  Click on the 'Verify' button below: <br/>  </h4>               
+
+                        <p:separator  />
+
+                        <p:spacer width="30px"/>
+
+                        <div align="center">
+                            <p:commandButton  process="@form" action="#{validityChecking.loginTrackforFifteenTimesMethod()}" resetValues="true" ajax="false"  style="width: 400px; height: 100px;background: #339900;font-family: cursive; font-size: xx-large; color: #f0f0f0"  value="Verify"/>
+
+                            <p:separator  />
+                            <p:spacer width="30px"/>
+                        </div>
+
+                        <p:separator />
+
+
+                        <div>
+
+                            <p:spacer style="height: 90"/> <br/>
+                            <h:panelGrid columns="1" cellpadding="5">
+                        <h4 align="center" style="color: #d9534f; font-family: monospace">  Thank you! for using the App! <br/>  </h4>               
+                            </h:panelGrid>
+                        </div>
+
+                    </b:panel>
+                    <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="index" />  
+                </b:form>
+            </div>
+        </b:container>
+    </h:body>
+</html>
+

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Login</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: medium; background-color: #33ff33">
+        <div align="center">
+
+            <b:messages id="msg2" showDetail="false" style="background-color: #ff0066; color: white" showIcon="true"/>
+
+            <h:form id="loginForm" style="background: #99ff99;" >
+                <p:panel  id="loginPanel" header="Login" style=";width: 580px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+
+                    <p:separator/>
+                    <h:form>
+                        <h4 align="center" style="color: #333333"> Please Supply your username and password to login.</h4>
+                    </h:form>  
+
+
+                    <p:separator/>
+
+                    <div align="center">
+                        <b:panel  title="Login" style="width: 350px; height: 180px; background: #cc0000; align-self: center;animation-fill-mode: both">
+                            <b:growl id="msg" showDetail="false" />
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel for="username" value="Username:" style="color: ghostwhite"/>
+                                <p:inputText id="username" value="#{loginBean.signin.username}" required="true"/>
+
+                                <h:outputLabel for="password" value="Password:" style="color: ghostwhite"/>
+                                <p:password id="password" value="#{loginBean.signin.password}" required="true" label="password" />
+
+                                <f:facet name="footer">
+                                    <p:commandButton value="login" action="#{loginBean.loginProject()}" ajax="false" update="msg,msg2"/> 
+ 
+                                </f:facet>  
+                            </h:panelGrid>
+
+                        </b:panel>
+                    </div>
+
+
+                    <p:separator />
+                </p:panel>
+
+                <p:spacer width="200px"/>
+                <p:separator style="background: #ffffff;"/>
+
+                <h:form >
+                    <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to www.cloudsoftconsultinglimited.com" outcome="index" />  
+                    <p:separator style="background: #ffffff;"/>
+
+                    <h:form style="background: #ccffcc">
+                        <h10 align="center" >
+                            Developed by  Cloudsoft Consulting Limited,<br/>
+                            Copyright © 2017 <br/>
+                            All Rights Reserved.<br/>
+                        </h10>
+                    </h:form>
+                </h:form>
+
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

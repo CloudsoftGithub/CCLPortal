@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head >
+        <title> Jamb Subject Selection page </title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: medium; background-color: #33ff33">
+        <div align="center">
+            <h:form id="SubjectSelectionForm">
+                <p:panel id="jmbcomb" header="Jamb Subject Selection" style=";width: 600px; background: #99ff99; align-self: center;animation-fill-mode: both;font-size: smaller">
+                    <h4 align="left" style="color: #660066">
+
+                        Welcome!  <h:inputText id="myusername" value="#{loginBean.signin.username}" style="background: #ccccff"/> <br/>  </h4>
+
+                    <h4 align="left" style="color: #660066">You successfully Signed up. Thank you for using this app!</h4>
+
+                    <h4 align="left" style="color: #ff3333">Please, select a maximum of two(2) subject(s) you want to practice:</h4>
+                    <p:separator />
+
+                    <p:selectManyCheckbox style="font-kerning: normal" layout="grid" id="jambCombination" value="#{subjectSelectionCheckboxViewSELECTBUTTON.selectedSubjects}"  columns="1">
+                        <f:selectItems value="#{subjectSelectionCheckboxView.subjects}" var="subject" itemLabel="#{subject}" itemValue="#{subject}"/>
+                    </p:selectManyCheckbox>
+                    <p:separator />
+
+       
+
+                    <h:outputText style="font-family: cursive; font-size: medium;background: #00cccc; color: #ff3333" value="Note: Questions data entry is on, so more subjects are to be uploaded!"></h:outputText>
+                    <p:separator />
+
+                    <p:commandButton id="selcBtn" widgetVar="btnselect"  ajax="false" action="#{subjectSelectionCheckboxViewSELECTBUTTON.startTestButtonMethd()}" style="font-size: small; width: 250px; height: 70px; background: #666600;background-color: #ff3333; font-family: monospace; color: white;font-size: xx-large"   value="Select"  update="jmbcomb">
+
+                    </p:commandButton>
+
+                    <p:separator />
+                    <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: large" value="click here to ExamDashboard" outcome="ExamsDashboard" />  
+
+                </p:panel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

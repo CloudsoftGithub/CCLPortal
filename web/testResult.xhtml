@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Test Result</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body  onload="#{testResult.clear()}" style="font-size: smaller;">
+
+
+        <div align="center">
+            <h:form  id="resultForm" style="background: #ccccff;" >
+                <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="index" />  
+
+                <p:panel id="BigresultPanel" header="Test Result" style=";height: 750px; width: 580px; background: #ccffcc; align-self: center;animation-fill-mode: both;font-size: smaller">
+
+                    <h2 align="left" style="color: #660066">                      
+                        Thank you!  <h:inputText id="myusername" value="#{loginBean.signin.username}"  size="10" style="background: #ccccff; font-family: cursive" /> <br/>  </h2>
+                    <p:separator />
+                    <div align="center">
+                        <p:commandButton  style="width: 210px; height: 30px;background: #339900; font-size: medium; color: #f0f0f0" ajax="false"  value="Click to view result" update="resultForm" > 
+                            <f:actionListener binding="#{testResult.gettingsubject()}"/>
+                            <f:actionListener binding="#{testResult.totalmarkssSubj1()}"/>
+                            <f:actionListener binding="#{testResult.totalmarkssSubj2()}"/>
+                            <f:actionListener binding="#{testResult.myresultForSubj1()}"/>
+                            <f:actionListener binding="#{testResult.myresultForSubj2()}"/>
+                        </p:commandButton>
+                    </div>
+                    <p:separator />
+                    <div align="left">
+                        <p:panel header="Result Summary" widgetVar="reultpnl" id="resultPanel" style="background: #f5fcf5;width: 560px"  >
+                            <h:panelGrid cellspacing="12" cellpadding="2" columns="2">
+
+                                <h:outputText value=" SUBJECT1: " style="color:  #ff3333; font-size: small"></h:outputText>
+                                <h:outputText id="subj1" value="#{testResult.subject1}"  style="color:  #3333ff; font-size: small"></h:outputText>
+
+                                <h:outputText value=" TOTAL MARKS: " style="color:  #ff3333; font-size: small"/>
+                                <h:outputText id="subj1Relt" value="#{testResult.subTotalNo}"  style="color: #3333ff; font-size: small"></h:outputText>
+
+                                <h:outputText  value=" MARKS OBTAINED: " style="color:  #ff3333; font-size: small"/>
+                                <h:outputText id="mrksobtained" value="#{testResult.result}"  style="color: #3333ff; font-size: larger"></h:outputText>
+
+                                <p:separator /> <p:spacer/>
+
+                                <h:outputText value="  SUBJECT2:  " style="color:  #ff3333; font-size: small"></h:outputText>
+                                <h:outputText  id="subj2" value="#{testResult.subject2}"  style="color:  #3333ff; font-size: small"></h:outputText>
+
+                                <h:outputText value=" TOTAL MARKS: " style="color:  #ff3333; font-size: small"></h:outputText>
+                                <h:outputText  value="#{testResult.subTotalNo2}"  style="color: #3333ff; font-size: small"></h:outputText>
+
+                                <h:outputText value=" MARKS OBTAINED: " style="color:  #ff3333; font-size: small"></h:outputText>
+                                <h:outputText id="mrksobtained2" value="#{testResult.result2}"  style="color: #3333ff; font-size: larger;"></h:outputText>
+
+                            </h:panelGrid>
+
+                        </p:panel>
+                    </div>
+                    <h:link style="color: #3333ff; font-size: x-large" value="Run the test again?" outcome="subjectSelection.xhtml" />  
+                    <p:spacer width="50" />
+                    <h:link style="color: #3333ff; font-size: x-large" value="Logout" outcome="cbtIndex.xhtml" />  
+                    <br/>  <br/>
+
+                    <p:separator />
+                    <p:spacer width="30px" />
+                    <h:link style="color: #666600;font-family: fantasy;font-size: x-large" value="Click to drop comment" outcome="ContactUs.xhtml" />  
+
+
+                    <div>
+
+                        <p:spacer style="height: 90"/> <br/>
+                        <h:panelGrid columns="1" cellpadding="5">
+                            <p:outputLabel value="thank you for using this app!" style="background: #cc00cc;font-size: large; font-family: cursive;color: white"/>
+                        </h:panelGrid>
+                    </div>
+
+                </p:panel>
+                <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="index" />  
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title> Successful creation of admin user </title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: smaller; background-color: #33ff33">
+         
+        <div align="center">
+            <h:form style="background: #99ff99;" >
+                <p:panel  header="Successful Admin User Creation" style=";width: 400px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+                    <h4 align="left" style="color: #660066">
+                        Welcome!       #{signupBean.signp.username}<br/>  </h4> 
+                    <p:separator/>
+                    <h:form>
+                        <h4 align="left" style="color: #660066">You successfully created an admin. user! use the specified credentials to login and test the user</h4>
+                    </h:form>  
+
+
+                    <p:separator/>
+                     <div align="center">
+                        <p:panel  header="Admin user Login" style="width: 260px; background: #cc0000; align-self: center;animation-fill-mode: both">
+                            <p:growl id="msg" />
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel for="username" value="Username:" style="color: ghostwhite"/>
+                                <p:inputText id="username" value="#{rootUserLoginBEAN.username}" required="true"/>
+
+                                <h:outputLabel for="password" value="Password:" style="color: ghostwhite"/>
+                                <p:password id="password" value="#{rootUserLoginBEAN.password}" required="true" label="password" />
+
+                                <f:facet name="footer">
+                                    <p:commandButton value="login" ajax="false"  action="#{rootUserLoginBEAN.adminUserLogin()}" update="msg" />
+
+                                </f:facet>  
+                            </h:panelGrid>
+
+                        </p:panel>
+                    </div>
+ 
+                    <p:separator />
+                </p:panel>
+            </h:form>
+            
+            
+        </div>
+    </h:body>
+</html>
+

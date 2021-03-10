@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Subject Registration</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="background: #99ff99;font-size: small">
+        
+
+        <b:container>
+
+            <div align="left">
+
+                <h:form id="subjtRegForm" enctype="multipart/form-data">
+                    <p:panel  id="subjpanel" header="Subject Registration"  style="font-size: small;left: 40%; margin-left: -100px; width: 500px; position: relative;">
+
+                        <b:panel  >
+                            <b:messages id="message" showDetail="true"  />
+                            <b:growl id="msg"   />
+
+                            <h:panelGrid columns="2" cellpadding="2">
+
+
+                                <h:outputLabel for="Subjectid"  value="Subject ID: " style="color: #333333"/>
+                                <h:outputText id="Subjectid" value="#{viewsubjID.sid}" style="background: #999999"></h:outputText>
+
+                                <h:outputLabel for="Subject" value="Subject: " style="color: #333333"/>
+                                <p:inputText id="Subject" value="#{subjectregBEAN.subjreg.subject}" required="true"/>
+                                <h:outputLabel for="Year" value="Year: " style="color: #333333"/>
+                                <p:inputText id="Year" value="#{subjectregBEAN.subjreg.year}" required="true"/>
+                                <h:outputLabel for="Time" value="Time: " style="color: #333333"/>
+                                <p:inputText id="Time"  value="#{subjectregBEAN.subjreg.time}" required="true"/>
+
+                                <f:facet name="footer">
+                                    <p:commandButton value="Register" ajax="false" action="#{subjectregBEAN.subjectregMethod()}" update="msg,message" style="color: white; background: #ad0e2f"  />
+                                    <p:commandButton value="View ID" ajax="false" action="#{viewsubjID.subjectViewIDMethod()}" style="color: white; background: #ad0e2f"/>
+                                </f:facet>  
+                            </h:panelGrid>
+
+                            <p:spacer height="29"></p:spacer>
+
+
+                            <b:dataTable value="#{subjectRegTableBEAN.registeredSubjects}" var="item"  style="width: 450px; font-size: x-small" > 
+
+                                <f:facet name="header">
+                                    <h:outputText value="Registered Subject Info" ></h:outputText>
+                                </f:facet>
+
+                                <b:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Subject Id" ></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{item.sid}"></h:outputText>
+                                </b:column>
+
+                                <b:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Subject" ></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{item.subject}"></h:outputText>
+                                </b:column>
+
+                                <b:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Year" ></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{item.year}"></h:outputText>
+                                </b:column>
+
+                                <b:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Time" ></h:outputText>
+                                    </f:facet>
+                                    <h:outputText value="#{item.time}"></h:outputText>
+                                </b:column>
+
+                            </b:dataTable>   
+
+                            <p:spacer width="25px"/>
+                            <h:link  style="color: #ff6699;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+
+                        </b:panel>
+                    </p:panel>
+                </h:form>
+            </div>
+        </b:container>
+
+
+    </h:body>
+</html>
+

@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>CBT Home</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <!-- for-mobile-apps -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Brilliance Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+            function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <!-- //for-mobile-apps -->
+        <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+        <!-- js -->
+        <script type="text/javascript" src="resources/js/jquery-2.1.4.min.js"></script>
+        <!-- //js -->
+
+        <!-- pop-up-box -->
+        <link href="resources/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- //pop-up-box -->
+        <!-- font-awesome icons -->
+        <link href="resources/css/font-awesome.css" rel="stylesheet"/> 
+        <!-- //font-awesome icons -->
+        <link href="//fonts.googleapis.com/css?family=Prata" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i" rel="stylesheet"/>
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'/>
+
+        <!-- Google web font -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+
+        <link href="https://fonts.googleapis.com/css?family=Anton&amp;subset=latin-ext" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin-ext" rel="stylesheet"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&amp;subset=latin-ext" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand&amp;subset=latin-ext" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"></link>
+
+
+        <!-- custom css -->
+        <link href="resources/css/custom.css" rel="stylesheet"></link>
+
+        <!-- JQuery Datepicker CSS -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+        <link rel="stylesheet" href="/resources/demos/style.css"/>
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <!-- JQuery Datepicker JS-->
+        <script>
+            $(function () {
+                $("#datepicker").datepicker();
+            });
+        </script>
+
+
+        <!-- Image Upload JS-->
+        <script type="text/javascript" src="resources/js/imageUpload.js"></script>
+
+        <!-- Image ShowImage JS-->
+        <script src="resources/js/showMyImage.js"></script>
+
+
+        <!-- custom img-upload -->
+        <link href="resources/css/img-upload.css" rel="stylesheet"></link>
+
+        <!-- Image imgInp JS-->
+        <script type="text/javascript" src="resources/js/imgInp.js"></script>
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+
+        <!-- 
+        this js is not used yet
+        <script src="resources/js/bootstrap-imgupload.js"></script>
+        -->
+    </h:head>
+
+    <h:body  style="background: #ccccff;background-color: #6362dc">
+
+        <div>
+            <b:form>
+                <ui:include src="header.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container  fluid="false" >
+
+            <div class="col-sm-1">
+                <!-- Just a space -->
+            </div>
+
+
+
+            <div class="col-sm-10">
+                <p:spacer height="100px" /> 
+                <marquee behavior="scroll" scrolldelay="100" direction="left" > 
+                    <h:outputText  class="animated." style="background: pink;font-size: x-large;font-family: 'Shrikhand', cursive; " value="Recommended Browsers: Google Chrome, Mozilla Firefox and Opera" ></h:outputText>
+                </marquee>
+
+                <p:messages autoUpdate="true" style="background-color: white; color: red" showIcon="true"/>
+
+                <b:panel  title="Welcome to MyJambPracPortal" style="font-size: smaller;  background: whitesmoke">
+
+                    <div align="left">
+                        <p:panel  style="font-family: sans-serif; font-size: large" >
+                            <p:outputLabel value="Instructions: " style="background: white; color: #ff0066;font-size: x-large"/> <br/>
+
+                            <h:outputText value="1. Ensure that you obtain your PIN and Serial No. by purchasing the scratch card from any of our vendors across the states  " style="background: white;font-size: small"> </h:outputText><br/>
+                            <h:outputText value="2. Scratch the card and log into www.cloudsoftconsulting.com.ng  " style="background: white;font-size: small"></h:outputText> <br/>
+                            <h:outputText value="3. The company site loads,  click on CBT tab   " style="background: white;font-size: small"></h:outputText> <br/>
+                            <h:outputText value="4. The system navigates you to the CBT environment where you will be asked to login or signup" style="background: white;font-size: small"></h:outputText> <br/>
+                            <h:outputText value="5. If you are using the application for the first time, please signup by clicking on the signup link " style="background: white;font-size: small"></h:outputText> <br/>
+                            <h:outputText value="6. Its take you to where  you enter your information and the card information" style="background: white;font-size: small"> </h:outputText><br/>
+                            <h:outputText value="7. Click on signup button " style="background: white;font-size: small"> </h:outputText><br/>
+                            <h:outputText value="7. Login with your username and password " style="background: white;font-size: small"> </h:outputText><br/>
+                            <br />
+                            <p align="justify" style="color: #3333ff; font-size: medium; font-family: cursive; font-style: oblique" > This application was developed by the  Cloudsoft Consulting Ltd. situated in Kaduna Nigeria.
+                                The application was developed as a means of putting hands on practice for those students who intended to sit for the Jamb CBT/IBT examinations. </p>
+
+                        </p:panel>
+
+                    </div>
+                    <h:form >
+                        <p:separator />
+
+                        <div align="center" class="col-sm-12">
+
+                            <h:form >
+                                <b:panel >
+                                         <b:panel   style="height: 630px;align-content: stretch;background: #130c04; align-self: center;animation-fill-mode: both;">
+                                            <p:outputLabel value="INFO FOR THE USERS OF 'JAMB PRACTICE PORTAL' :" style="font-style: italic; color:  #a8d6db; font-family: cursive; font-size: large"/>
+                                            <p>
+                                                <h:outputText value="1. This application was developed by Cloudsoft Consulting Ltd." style="color: white;font-size: small;font-family: monospace" ></h:outputText> <br/>
+                                                <h:outputText value="2. The application will be updated regularly" style="color: white;font-size: small;font-family: monospace" ></h:outputText> <br/>
+                                                <h:outputText value="3. Questions are collected from previous JAMB/POST UTME" style="color: white;font-size: small;font-family: monospace" > </h:outputText><br/>
+                                                <h:outputText value="4. Users can only practice two subject at a time " style="color: white;font-size: small;font-family: monospace" ></h:outputText> <br/>
+                                                <h:outputText value="5. scratch cards are obtainable from our accredited vendors " style="color: white;font-size: small;font-family: monospace" ></h:outputText> <br/>
+                                                <h:outputText value="6. Please quickly signup after purchasing the card  " style="color: white;font-size: small;font-family: monospace" > </h:outputText><br/>
+                                                <h:outputText value="7. Card usage is also stipulated on the card " style="color: white;font-size: small;font-family: monospace" > </h:outputText><br/>
+
+                                            </p>
+                                            <p:separator   style="height: 50px; background: #ccccff"/>
+
+                                            <br/>
+                                            <p:outputLabel style="color: #cccccc;font-size: xx-large; font-family: sans-serif" value=" Help Line: "/>
+                                            <p:outputLabel style="color: #cccccc;font-size: xx-large; font-family: sans-serif" value=" +234 9038605224 "/>
+                                            <br/>  <br/>
+                                            <h:link style="color: #ffffff;font-family: fantasy;font-size: xx-large" value="click to drop comment" outcome="ContactUs.xhtml" />  
+
+                                        </b:panel>
+
+                                    <b:panel  title="Signup and Login" style="height: 500px;align-content: center;width: 450px; background: whitesmoke; align-self: center;animation-fill-mode: both;">
+
+
+                                            <h4 align="left" style="background: #33ccff;font-size: 14">Existing users  can login by: Supplying username and password below:<br/> </h4>
+
+                                            <p:separator/>
+                                            <h2 style="font-size: small;color: #3333ff">Are you a new users? Click on Signup link below to register</h2>
+                                            <h:link style="color: #990066;font-stretch: expanded;font-size: large" value="Signup Here" outcome="signup" />
+                                            <p:separator/>
+
+                                            <h:form>
+                                                <h4 style="color: #333333;background: #33ccff"> Click on the link(icon) below and supply username and password to login. </h4>
+
+                                                <h:link style="color: #990066;font-stretch: expanded;font-size: large" value="Login Here" outcome="login" >
+                                                    <p:graphicImage name="/images/login.gif"/>
+                                                </h:link>
+
+                                            </h:form>
+                                            <h:form style="background: #33ccff">
+
+                                                <h:link  style="text-align: left;color: #3333ff;font-family: initial;font-size: small" value=" Forgot Password?" outcome="forgotPassword" />
+                                            </h:form>
+
+                                            <p:separator/>
+                                            <h:link style="color: #990066;font-family: initial;font-stretch: expanded;font-size: small" value="Admin users" outcome="adminHome" />
+
+
+                                        </b:panel>
+
+                                 </b:panel>
+
+
+                            </h:form>
+
+                        </div>
+                    </h:form>
+
+
+                </b:panel>
+
+
+
+
+            </div>
+            <div class="col-sm-1">
+                <!-- Just a space -->
+            </div>
+        </b:container>
+        <div>
+            <b:form>
+                <ui:include src="footera.xhtml"/>
+            </b:form>
+        </div>
+
+    </h:body>
+</html>
+

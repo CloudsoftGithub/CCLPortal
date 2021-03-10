@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>view_notice</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: background">
+
+        <div>
+            <b:form>
+                <ui:include src="headerenrolledUsersDashboard.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container fluid="true" >
+            <div>
+                <p:spacer height="20px" /> <!-- this is a space  -->
+            </div>
+            <b:form id="viewNoticeForm" enctype="multipart/form-data">
+
+                <div class="col-sm-2">
+                    <!-- Space -->
+
+                </div>
+
+
+                <div class="col-sm-8" align="center">
+
+                    <b:messages id="msgs" />
+                    <b:growl id="msgs1"  showDetail="true"/>
+
+                    <p:panel id="viewNoticePanel"  >
+                        <div style="color:  #c9302c; font-family: 'Anton', cursive;font-size: x-large">
+                            <h2 align="center" style="background: black; color: wheat ; font-family: sans-serif"> CCL E-NOTICE BOARD</h2> 
+
+                            <marquee behavior="scroll" scrolldelay="200" direction="down" > 
+                                <h4 align="center" style="background: lightskyblue; font-family: sans-serif"> View Notice Here</h4>   
+                            </marquee>                                                  
+                        </div>
+                        <div >
+                            <b:form style="background: red">
+                                <h3 align="center" style="background: brown; color: wheat; font-family: cursive">Pls, always refresh/reload this page to view the must updated notice</h3>   
+                            </b:form>              
+                        </div>  
+                        <!---  start of data table -->
+
+                        <br style="height: 30px" /> 
+
+
+                        <b:dataTable value="#{checkforAnnouncemnet.publicizedAnnouncement}" ajax="true" style="background: lightblue" var="item">
+
+                            <f:facet name="header">
+                                <h:outputText value="Clients Comments" />
+                            </f:facet>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ID" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.aid}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Announcements" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.announcement}"></h:outputText>
+                            </b:column>
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Publicized Date" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.publicizedDate}"></h:outputText>
+                            </b:column>
+                        </b:dataTable> 
+
+                        <!--- end of data table-->
+                    </p:panel>
+
+                </div>
+
+                <div class="col-sm-2">
+                    <!-- Space -->
+                </div>
+            </b:form>  
+        </b:container>
+
+    </h:body>
+</html>
+

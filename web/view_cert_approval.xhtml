@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>view_cert_approval</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body>
+        <div>
+            <b:form>
+                <ui:include src="headerCCLAdmin.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container  fluid="false"> 
+            <div  >
+                <p:spacer height="10px" /> <!-- this is a space  -->
+            </div>
+
+            <b:form id="viewStockForm" >
+
+
+                <div class="col-md-12"  style="background: #936be8">
+
+                    <div align="center" style="background: green; font-family: monospace; color: white; font-size: xx-large"> Approved Certificate List</div>
+                    <p:separator/>
+
+                    <b:dataTable id="viewStock" value="#{viewCert_Application.cert_ApprovalviewInfo}" var="item" style="width: 800px;">
+                        <f:facet name="header">
+                            <h:outputText value="Registered Products" />
+                        </f:facet>
+
+                        <b:column >
+                            <f:facet name="header">
+                                <h:outputText value="Full Name" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.fullname}"></h:outputText>
+                        </b:column>
+
+
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="E-mail" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.email}"></h:outputText>
+                        </b:column>
+
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Phone" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.phone}"></h:outputText>
+                        </b:column>
+
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Program" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.program}"></h:outputText>
+                        </b:column>
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Username" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.username}"></h:outputText>
+                        </b:column>
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="CCL No" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.cclNo}"></h:outputText>
+                        </b:column>
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Date Registered" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.dateSigneUp}"></h:outputText>
+                        </b:column>
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cert_App Date" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.dateApplied}"></h:outputText>
+                        </b:column>
+                        <b:column>
+                            <f:facet name="header">
+                                <h:outputText value="Duration" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.duration}"></h:outputText>
+                        </b:column>
+                    </b:dataTable>
+
+                </div>
+                 
+            </b:form>
+
+        </b:container> 
+         
+    </h:body>
+</html>
+

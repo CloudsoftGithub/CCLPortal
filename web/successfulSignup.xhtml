@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title> Successful signup page </title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: medium; background-color: #33ff33">
+        <div align="center">
+            <h:form style="background: #99ff99;" >
+                <p:panel  header="Successful signup" style=";width: 600px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+                    <h1 align="center" style="color:  white; background: green; ">
+                        Welcome:       #{signupBean.signp.username} !<br/>  </h1> 
+                    <p:separator/>
+                    <h:form>
+                        <h4 align="left" style="color: #660066">You successfully Signed up. Thank you for using myjambpracportal!</h4>
+                        <h4 align="left" style="color: #333333">Your Signup detail have been sent to your mail.</h4>
+                    </h:form>  
+
+                    <p:separator/>
+                    <div>
+                        <b:messages id="msg2" showDetail="false" style="background-color: #ff0066; color: white" showIcon="true"/>
+
+                        <!--
+                        
+                         <b:panel>
+                             <b:form>
+                                 <b:inputText label="Username:" value="#{enrollmentBEAN.enroll.username}"   />
+ 
+                             </b:form>
+                         </b:panel>
+ 
+                        
+                        -->
+                        <p:panel  id="loginPanel" header="Login" style=";width: 580px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+
+                            <p:separator/>
+                            <h:form>
+                                <h4 align="center" style="color: #333333"> Please Supply your username and password to login.</h4>
+                            </h:form>  
+
+
+                            <p:separator/>
+
+                            <div align="center">
+                                <b:panel  title="Login" style="width: 350px; height: 180px; background: #cc0000; align-self: center;animation-fill-mode: both">
+                                    <b:growl id="msg" showDetail="false" />
+                                    <h:panelGrid columns="2" cellpadding="5">
+                                        <h:outputLabel for="username" value="Username:" style="color: ghostwhite"/>
+                                        <p:inputText id="username" value="#{loginBean.signin.username}" required="true"/>
+
+                                        <h:outputLabel for="password" value="Password:" style="color: ghostwhite"/>
+                                        <p:password id="password" value="#{loginBean.signin.password}" required="true" label="password" />
+
+                                        <f:facet name="footer">
+                                            <p:commandButton value="login" action="#{loginBean.loginProject()}" ajax="false" update="msg,msg2"/> 
+
+                                        </f:facet>  
+                                    </h:panelGrid>
+
+                                </b:panel>
+                            </div>
+
+
+                            <p:separator />
+                        </p:panel>
+
+                    </div>
+
+
+                    <p:separator />
+                </p:panel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

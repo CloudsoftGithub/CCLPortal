@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> Admin Dashboard </title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: smaller; background-color: #33ff33">
+        <div align="center">
+            <h:form style="background: #99ff99;" >
+                <p:panel  header="Admin Dashboard" style=";width: 900px; height: 690px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+                    <h2 align="left" style="color: #660066">
+                        Welcome!       #{rootUserLoginBEAN.username}<br/>  </h2> 
+                    <p:separator/>
+
+                    <p:separator/>
+
+                    <div align="justify">
+                        <h:panelGrid columns="6" cellpadding="5">
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="Subject Registration" outcome="subjectRegistration" />  
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="Questions DataEntry (Text Mode)" outcome="QuestionsDataEntry" />  
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="Questions DataEntry (Image Mode)" outcome="QuestionsDataEntryImageMode" />  
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="View Comments" outcome="viewSiteClientComment.xhtml" />  
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="View SignedUp Users" outcome="ViewSignedUpUsers.xhtml" />  
+                            <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="Edit QuestionsData" outcome="EditQuestionDataEntry.xhtml" />  
+
+                        </h:panelGrid>
+                    </div>
+
+                    <p:separator style="height:  450px"/>
+
+                </p:panel>
+            </h:form>
+            <p:layoutUnit position="south" >
+                <h:form style="background: #ccffcc">
+                    <h9 align="justify" >
+                        Cloudsoft Consulting Limited, Copyright © 2017 <br/>
+                        All Rights Reserved
+                    </h9>
+                </h:form>
+            </p:layoutUnit>
+        </div>
+    </h:body>
+</html>
+

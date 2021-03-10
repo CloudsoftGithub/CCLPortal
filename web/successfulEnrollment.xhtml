@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title> Successful Enrollment - Cloudsoft Consulting Limited (CCL)</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body  style="font-size: medium;background: lightseagreen" onload="#{enrollmentBEAN.cclNoRetrievalMthd()}" >
+        <b:container fluid="true">
+
+
+            <div align="center" class="col-xs-2">
+                    <!-- Just a space-->
+            </div>
+
+            <div id="Print" align="center" class="col-xs-8">
+                <p:spacer height="100px" />
+
+
+                <b:form   >
+                    <b:panel id="SuccessFullyEnroled" title="Successfully Enrolled" style=";width: 600px; background: #ffffff; align-self: center;animation-fill-mode: both;font-size: smaller">
+                        <!--- Printing command  -->
+                        <p:commandButton value="Print" type="button" icon="ui-icon-print" style="display:block;margin-bottom: 20px;background: wheat">
+                            <p:printer  target="SuccessFullyEnroled" />
+                        </p:commandButton>
+
+                        <div align="center">
+                            <b:form>
+                                <h4 align="center" style="color: #660066">You successfully Enrolled into a CCL program: <h3 style="color: red"> '#{enrollmentBEAN.enroll.program}'</h3> </h4>
+                                <h4 align="center" style="color: #333333">Your Enrollment details are listed below:</h4>
+                                <h4 align="center" style="color: #333333; color: red">(Also sent via your email ID):</h4>
+
+                                <p:separator />
+
+                            </b:form>  
+                        </div>
+
+                        <div>
+
+                            <b:panel style="background: #99ff99; color: black">
+                                <b:form >
+                                    <h4 align="left" style="color:  black; background: pink; ">  CCLNo:   #{enrollmentBEAN.enroll.cclNo} <br/>  </h4> 
+                                    <h4 align="left" style="color:  black; background: gray; ">  Username:   #{enrollmentBEAN.enroll.username} <br/>  </h4> 
+                                    <h4 align="left" style="color:  black; background: gray; ">  Program:   #{enrollmentBEAN.enroll.program} <br/>  </h4> 
+                                    <h4 align="left" style="color:  black; background: gray; ">  Phone no:   #{enrollmentBEAN.enroll.phone} <br/>  </h4> 
+
+                                </b:form>
+
+                                <b:form>
+                                    <div align="right">
+                                        <p:link value="Login here" style="font-size: x-large; font-family: sans-serif" outcome="enrolledUsersLogin.xhtml"/>
+                                         
+                                    </div>
+                                </b:form>
+                            </b:panel>
+                        </div>
+
+                        <p:separator />
+                    </b:panel>
+                </b:form>
+            </div>
+
+            <div align="center" class="col-xs-2">
+
+            </div>
+        </b:container>
+    </h:body>
+</html>
+

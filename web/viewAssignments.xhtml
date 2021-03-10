@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>view_assignments</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: background">
+
+        <div>
+            <b:form>
+                <ui:include src="headerenrolledUsersDashboard.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container fluid="true" >
+            <div>
+                <p:spacer height="20px" /> <!-- this is a space  -->
+            </div>
+            <b:form id="viewAssignmentsForm" enctype="multipart/form-data">
+
+                <div class="col-sm-3">
+ 
+                     <p:panel style="background: lightsteelblue" id="viewAssignmentsPanel">
+                        <h4 align="center" style="background: red; color: lightcyan; font-family: monospace"> View Assignments </h4>       
+                        <br style="height: 30px"  />
+
+                        <b:selectOneMenu id="program" label="Program:" value="#{checkForAssignment.programm}" class="form-control" required="true" required-message="Pls, select program"  >
+                            <f:selectItem itemLabel="Select program" itemValue=""  />
+                            <f:selectItem itemLabel="Advanced ICT Training" itemValue="Advanced ICT Training" />
+                            <f:selectItem itemLabel="Medium ICT Training" itemValue="Medium ICT Training" />
+                            <f:selectItem itemLabel="Basic ICT Training" itemValue="Basic ICT Training" />
+                            <f:selectItem itemLabel="Java SE Training" itemValue="Java SE Training" />
+                            <f:selectItem itemLabel="Java EE Training" itemValue="Java EE Training" />
+                            <f:selectItem itemLabel="C# Programming Training" itemValue="C# Programming Training" />
+                            <f:selectItem itemLabel="C++ Programming Training" itemValue="C++ Programming Training" />
+                            <f:selectItem itemLabel="C Programming Training" itemValue="C Programming Training-008" />
+                            <f:selectItem itemLabel="Phyton Programming Training" itemValue="Phyton Programming Training" />
+                            <f:selectItem itemLabel="PHP with CodeIgniter" itemValue="PHP with CodeIgniter" />
+                            <f:selectItem itemLabel="PHP Programming Training" itemValue="PHP Programming Training" />
+                            <f:selectItem itemLabel="Other Programming Languages" itemValue="Other Programming Languages" />
+                            <f:selectItem itemLabel="Bootfaces Training" itemValue="Bootfaces Training" />
+                            <f:selectItem itemLabel="JSF/Primefaces Training" itemValue="JSF/Primefaces Training" />
+                            <f:selectItem itemLabel="Android Dev. Training" itemValue="Android Dev. Training" />
+                            <f:selectItem itemLabel="Software Dev. Traing" itemValue="Software Dev. Traing" />
+                            <f:selectItem itemLabel="Stand-alone Systems" itemValue="Stand-alone Systems" />
+                            <f:selectItem itemLabel="Network-based Systems" itemValue="Network-based Systems" />
+                            <f:selectItem itemLabel="AWS Cloud Dev. Training" itemValue="AWS Cloud Dev. Training" />
+                            <f:selectItem itemLabel="Jelastic Cloud Dev. Training" itemValue="Jelastic Cloud Dev. Training" />
+                            <f:selectItem itemLabel="General Cloud Hosting Training" itemValue="General Cloud Hosting Training" />
+                            <f:selectItem itemLabel="Statistical Packages Training" itemValue="Statistical Packages Training" />
+                            <f:selectItem itemLabel="Diploma In Microsoft Packages" itemValue="Diploma In Microsoft Excel" />
+                            <f:selectItem itemLabel="Diploma In Microsoft Excel" itemValue="Diploma In Microsoft Packages" />
+                            <f:selectItem itemLabel="Advanced Excel Training" itemValue="Advanced Excel Training" />
+                            <f:selectItem itemLabel="Web Development Training" itemValue="Web Development Training"/>
+                            <f:selectItem itemLabel="Cyber Security" itemValue="Cyber Security"/>
+                            <f:selectItem itemLabel="Webinar Training" itemValue="Webinar Training"/>
+                            <f:selectItem itemLabel="NYSC Trainee" itemValue="NYSC Trainee"/>
+                        </b:selectOneMenu>
+
+                        <b:dateTimePicker show-time="false"   id="dateofCommencement" value="#{checkForAssignment.doc}"  p:placeholder="Date of commencement"   required="true" label="Date of commencement:" required-message="Pls, supply the date of commencement!"/>
+
+                        <b:selectOneMenu id="Batch" tooltip="supply your Batch" label="Batch:" value="#{checkForAssignment.batch}" class="form-control" required="true" required-message="supply your Batch!"  >
+                            <f:selectItem itemLabel="Select Batch" itemValue=""  />
+                            <f:selectItem itemLabel="Batch A" itemValue="Batch A" />
+                            <f:selectItem itemLabel="Batch B" itemValue="Batch B" />
+                            <f:selectItem itemLabel="Batch C" itemValue="Batch C" />
+                            <f:selectItem itemLabel="Batch D" itemValue="Batch D" />
+                            <f:selectItem itemLabel="Batch E" itemValue="Batch E" />
+                            <f:selectItem itemLabel="Batch F" itemValue="Batch F" />
+                        </b:selectOneMenu>
+
+                           <b:selectOneMenu  id="AssignmentTitle" label="Assignment Title:" value="#{checkForAssignment.title}" class="form-control" required="true" required-message="Pls, select Assignment title!"  >
+                            <f:selectItem itemLabel="Select Assignment Title" itemValue=""  />
+                            <f:selectItem itemLabel="Assignment 1" itemValue="Assignment 1" />
+                            <f:selectItem itemLabel="Assignment 2" itemValue="Assignment 2" />
+                            <f:selectItem itemLabel="Assignment 3" itemValue="Assignment 3" />
+                            <f:selectItem itemLabel="Assignment 4" itemValue="Assignment 4" />
+                            <f:selectItem itemLabel="Assignment 5" itemValue="Assignment 5" />
+                            <f:selectItem itemLabel="Assignment 6" itemValue="Assignment 6" />
+                            <f:selectItem itemLabel="Assignment 7" itemValue="Assignment 7" />
+                            <f:selectItem itemLabel="Assignment 8" itemValue="Assignment 8" />
+                            <f:selectItem itemLabel="Assignment 9" itemValue="Assignment 9" />
+                            <f:selectItem itemLabel="Assignment 10" itemValue="Assignment 10" />
+                            <f:selectItem itemLabel="Assignment 11" itemValue="Assignment 11" />
+                            <f:selectItem itemLabel="Assignment 12" itemValue="Assignment 12" />
+                            <f:selectItem itemLabel="Assignment 13" itemValue="Assignment 13" />
+                            <f:selectItem itemLabel="Assignment 14" itemValue="Assignment 14" />
+                            <f:selectItem itemLabel="Assignment 15" itemValue="Assignment 15" />
+                            <f:selectItem itemLabel="Assignment 16" itemValue="Assignment 16" />
+                            <f:selectItem itemLabel="Assignment 17" itemValue="Assignment 17" />
+                            <f:selectItem itemLabel="Assignment 18" itemValue="Assignment 18" />
+                            <f:selectItem itemLabel="Assignment 19" itemValue="Assignment 19" />
+                            <f:selectItem itemLabel="Assignment 20" itemValue="Assignment 20" />
+                            <f:selectItem itemLabel="Assignment 21" itemValue="Assignment 21" />
+                            <f:selectItem itemLabel="Assignment 22" itemValue="Assignment 22" />
+                            <f:selectItem itemLabel="Assignment 23" itemValue="Assignment 23" />
+                            <f:selectItem itemLabel="Assignment 24" itemValue="Assignment 24" />
+                            <f:selectItem itemLabel="Assignment 25" itemValue="Assignment 25" />
+                            <f:selectItem itemLabel="Assignment 26" itemValue="Assignment 26" />
+                            <f:selectItem itemLabel="Assignment 27" itemValue="Assignment 27" />
+                            <f:selectItem itemLabel="Assignment 28" itemValue="Assignment 28" />
+                            <f:selectItem itemLabel="Assignment 29" itemValue="Assignment 29" />
+                            <f:selectItem itemLabel="Assignment 30" itemValue="Assignment 30" />
+                            <f:selectItem itemLabel="Assignment 31" itemValue="Assignment 31" />
+                            <f:selectItem itemLabel="Assignment 32" itemValue="Assignment 32" />
+                            <f:selectItem itemLabel="Assignment 33" itemValue="Assignment 33" />
+                            <f:selectItem itemLabel="Assignment 34" itemValue="Assignment 34" />
+                            <f:selectItem itemLabel="Assignment 35" itemValue="Assignment 35" />
+
+                        </b:selectOneMenu>
+                        <p:separator  />
+                        <p:commandButton ajax="false" style=" background: lightgray;"   value="View " process="@form"  update="msg1,msg,MaterialDataTabe"/>
+
+                    </p:panel>
+
+                </div>
+
+
+                <div class="col-sm-9" align="center">
+
+                    <b:messages id="msgs" />
+ 
+                    <p:panel id="viewMaterialThePanel"  >
+                        <h2 align="center" style="background: lightskyblue"> View Assignment </h2>        
+                        <!---  start of data table -->
+
+                        <br style="height: 30px" /> 
+
+                        <b:dataTable id="MaterialDataTabe"  value="#{checkForAssignment.assignments}" ajax="true" var="item"   style="width:800px; background: lightsteelblue">
+
+                            <f:facet name="header">
+                                <h:outputText value="Assignment" />
+                            </f:facet>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="SID" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.sid}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Program" ></h:outputText>
+                                </f:facet>
+                                <h:outputText escape="false" value="#{item.programm}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Batch" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.batch}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Title" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.title}"></h:outputText>
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Descrp" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.description}"></h:outputText>
+
+
+                            </b:column>
+
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Date" ></h:outputText>
+                                </f:facet>
+                                <h:outputText value="#{item.date}"></h:outputText>
+                            </b:column>
+                            <b:column>
+                                <f:facet name="header">
+                                    <h:outputText value="File" ></h:outputText>
+                                </f:facet>
+ 
+                                <pe:documentViewer value="#{checkForAssignment.file}" width="500"   cache="false"  />
+
+                            </b:column>
+
+                        </b:dataTable> 
+
+                        <!--- end of data table-->
+                    </p:panel> 
+
+                </div>
+
+
+            </b:form>  
+        </b:container>
+
+    </h:body>
+</html>
+

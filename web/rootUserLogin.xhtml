@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+
+        <title> root user login </title>
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: medium; background: #2d453b ">
+        
+        <b:container  fluid="false" >
+            
+            <b:container  fluid="false" >
+
+            <div>
+                <p:spacer height="100px" /> <!-- this is a space  -->
+            </div>
+
+            <div class="col-sm-2">
+                <!--Jus a space -->
+            </div>
+            <div class="col-sm-8">
+
+                <h:form style="background: #d4d0e7">
+                    <b:panel  title="ROOT USER LOGIN" style=" background: #96a39d;font-size: large">
+                        <h4 style="color: #990099; font-size: larger" align="center">  
+                            Please, login as a root user first for you  to create an admin user. 
+                        </h4>
+
+
+                        <p:separator style="background: black"/>
+
+
+                        <p:messages autoUpdate="true" style="background-color: #b11c34; background: #ff3366" showIcon="true"/>
+
+                        <div align="left">
+                            <b:panel  title="Root user login" >
+                                <b:growl id="msg" />
+                                <b:inputText id="username" label="Username" value="#{rootUserLoginBEAN.username}"  required="true"/>
+
+
+                                <b:inputSecret id="password" label="Password:" value="#{rootUserLoginBEAN.password}" required="true"  />
+
+                                <f:facet name="footer">
+                                    <p:commandButton value="login"   action="#{rootUserLoginBEAN.rootLoginMethod()}"  ajax="false" update="msg"/>
+
+                                </f:facet>  
+
+                            </b:panel>
+                        </div>
+
+
+                        <p:separator />
+                    </b:panel>
+                </h:form>
+            </div>
+
+            <div class="col-sm-2">
+                <!--Jus a space -->
+            </div>
+
+        </b:container>
+            
+        </b:container>
+
+     
+    </h:body>
+</html>
+

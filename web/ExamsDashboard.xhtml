@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <title>Exam Dashboard</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: small; background: #009999">
+        <div align="left">
+            <p:panel  id="TestDashBoardFormPanel" style="left: 35%; margin-left: -100px; width: 710px; position: relative;background: #009999; align-self: center;animation-fill-mode: both">
+                <b:form>
+                    <h:panelGrid cellspacing="2" cellpadding="1" columns="7">
+                        <h:outputLabel for="time" value="Time left: " style="background: #ff0066;font-size: large; font-kerning: normal; color: #f0f0f0"/>
+                        <pe:timer id="time"  widgetVar="timer" immediate="true" autoStart="true" timeout="4800" listener="#{examsDashboard.onTimeout()}" singleRun="true"  format="HH:mm:ss"/>
+                    </h:panelGrid>
+
+                </b:form>
+            </p:panel>
+        </div>
+
+        <div align="left">
+            <h:form id="TestDashBoardForm" style=";align-items: flex-start;">
+
+                <p:panel  id="TestDashBoardFormPanel" style="left: 35%; margin-left: -100px; width: 710px; position: relative;background: #66ff66; align-self: center;animation-fill-mode: both">
+                    <h:panelGrid cellspacing="12" cellpadding="1" columns="7">
+
+                        <h4 align="left" style="color: #660066">
+
+                            Username:  <h:inputText id="myuser" value="#{loginBean.signin.username}" style="background: #66ff33"/>   </h4>
+
+                        <p:commandButton id="btnStart" ajax="false" widgetVar="StartButton" immediate="true" value="Start Test"  onclick="PF('timer').start();"  style="font-size: small; width: 160px; height: 50px; background: #666600;background-color: #3333ff;color: white" >
+                            <f:actionListener binding="#{examsDashboard.subjectpullingDMethod()}" />
+                            <f:actionListener binding="#{examsDashboard.timeYearpullingDMethod()}"/>
+                            <f:actionListener binding="#{examsDashboard.sidPullingMethod()}"/>
+                            <f:actionListener binding="#{examsDashboard.questionPullingMethod()}"/>
+                            <f:actionListener binding="#{examsDashboard.subjectpullingDMethod()}"/>
+                            <f:actionListener binding="#{examsDashboard.nextButtonMethod()}" />
+                            <f:actionListener binding="#{examsDashboard.retrievingandDisplayingAlreadySelectedAnswersButtons()}"/>
+                            <f:actionListener binding="#{testResult1.deleteResultAfterViewing()}"/>
+
+                        </p:commandButton>
+
+                        <p:commandButton ajax="false" value="Submit and View Result" action="#{examsDashboard.submitandViewResult()}"  style="font-size: small;background: #ff0066;color: white; width: 230px; height: 50px; font-size: small;"/>
+                    </h:panelGrid>
+
+                    <p:tabView  id="SubjTabPanel" effect="fade" effectDuration="fast" activeIndex="#{examsDashboard.activeIndex}" cache="false" dynamic="true" scrollable="true" style="background: #3333ff; width:auto; height:35px">
+                        <p:tab  id="Subj1TabID" title="#{examsDashboard.subject1}">
+                        </p:tab>
+                        <p:commandLink  action="#{examsDashboard.goToTab(1)}"/>
+                        <p:tab    id="Subj2TabID" title="#{examsDashboard.subject2}">
+                        </p:tab>
+                    </p:tabView>
+
+                    <p:separator style="width: 10px"/>
+                    <h:outputLabel for="Subject" value="Subject: " style="color: #ff0066"/>
+                    <h:outputText id="Subject" value="#{examsDashboard.subject}"  style="background: #cccccc" />
+
+                    <p:spacer width="20px"/>
+
+                    <h:outputLabel for="QuestionNo" value="Question No: " style="color: #ff0066"/> 
+                    <h:outputText id="QuestionNo" escape="false" value="#{examsDashboard.questionNo}" style="background: #cccccc;"></h:outputText>
+                    <h:outputLabel for="ofQuestNo" value="    of " /> 
+                    <h:outputText id="ofQuestNo" escape="false" value="#{examsDashboard.subjTotalNoOfQuest}" style="background: #cccccc"></h:outputText>
+
+                    <br/> <br/>
+                    <h:outputLabel for="instruction" value="Instruction: " style="color: #ff0066" /> 
+                    <h:outputText id="instruction" escape="false" value="#{examsDashboard.instructions}" style="background: #cccccc"></h:outputText>
+                    <br/> <br/>
+
+                    <h:outputLabel for="Question" value="Question: " style="color: #ff0066"/> 
+                    <br/>
+                    <h:outputText id="Question" escape="false" value="#{examsDashboard.question}" style="background: #cccccc"></h:outputText>
+                    <br/>  <br/>
+
+                    <b:panel ajax="false" id="RadioButtons" style=" background: #f0f0f0;align-self: center;animation-fill-mode: both; height: 150px">
+                        <h:selectOneRadio  id="userAnswers" layout="pageDirection"   valueChangeListener="#{examsDashboard.savingQuestionMethod()}">
+                            <f:selectItem  id="A" itemEscaped="false" itemLabel="#{examsDashboard.choiceA}" itemValue="A"/> 
+                            <f:selectItem id="B" itemEscaped="false" itemLabel="#{examsDashboard.choiceB}" itemValue="B"/>
+                            <f:selectItem id="C" itemEscaped="false" itemLabel="#{examsDashboard.choiceC}" itemValue="C"/>
+                            <f:selectItem id="D" itemEscaped="false" itemLabel="#{examsDashboard.choiceD}" itemValue="D"/>
+                        </h:selectOneRadio>
+
+                    </b:panel>
+
+
+                    <b:panel id="NavigationsButtons" style=" background: #333333 ;align-self: center;animation-fill-mode: both; height: 50px">
+                        <h:panelGrid cellspacing="5" cellpadding="1" columns="3">
+                            <p:commandButton  value="Previous" style="color: white; background: #cc00cc" ajax="false" resetValues="true">
+                                <f:actionListener binding="#{examsDashboard.sidPullingMethod()}"/>
+                                <f:actionListener binding="#{examsDashboard.questionPullingMethod()}"/>
+                                <f:actionListener binding="#{examsDashboard.previousButtonMethod()}"/>
+                                <f:actionListener binding="#{examsDashboard.retrievingandDisplayingAlreadySelectedAnswersButtons()}"/>
+                            </p:commandButton>
+
+                            <p:commandButton value="Next >>"   style="font-size: small;background: #cc00cc;color: white;" ajax="false" resetValues="true">
+                                <f:actionListener binding="#{examsDashboard.sidPullingMethod()}"/>
+                                <f:actionListener binding="#{examsDashboard.questionPullingMethod()}"/>
+                                <f:actionListener binding="#{examsDashboard.nextButtonMethod()}" />
+                                <f:actionListener binding="#{examsDashboard.retrievingandDisplayingAlreadySelectedAnswersButtons()}"/>
+                            </p:commandButton>
+
+                        </h:panelGrid>
+                    </b:panel>
+
+                </p:panel>
+
+            </h:form>
+
+        </div>
+
+        <p:spacer />
+        <div align="center" style="animation-delay: 2000">
+            <b:form style="background: #009999; " >
+                <b:label class="center_content" style="font-size: small; font-family: monospace; background:  black; color: white" text="Developed by: Cloudsoft Consulting Limited.  All Rights Reserved." />  <br/>
+                <b:label class="center_content" style="font-size: small; font-family: monospace; background: black; color: white" text="No.1 Dabino House. Yakubu Gowon Way, Kaduna. " /> 
+            </b:form>
+        </div>
+
+    </h:body>
+
+</html>
+

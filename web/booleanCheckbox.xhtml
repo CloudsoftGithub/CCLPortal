@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body>
+        <h:form style="background: #ff6666">
+            <p:growl id="msg"/>
+
+            <h:panelGrid columns="2" style="margin-bottom: 10px" cellpadding="5">
+
+
+
+                <h:outputText value="PHYSICS "></h:outputText>
+                <p:selectBooleanCheckbox value="#{selectBooleanView.physiscs}" >
+                    <p:ajax update="msg" listener="#{selectBooleanView.addMessage()}"/>
+                </p:selectBooleanCheckbox>
+            </h:panelGrid>
+
+            <h:outputText value="USE OF ENGLISH : "> </h:outputText> 
+            <p:selectBooleanCheckbox value="#{selectBooleanView.useOfEnglish}"/>
+
+            <p:separator />
+            <p:commandButton value="Submit" icon="ui-icon-check" update="display" oncomplete="PF('dig').show()"/>
+            <p:dialog header="Jamb Cominations selected" modal="true" resizable="false" showEffect="fade" widgetVar="dig">
+                <h:panelGrid columns="1" id="display">
+                    <h:outputText value="First Selected Subject: #{selectBooleanView.useOfEnglish}"></h:outputText>
+                </h:panelGrid>
+
+            </p:dialog>
+
+        </h:form>
+    </h:body>
+</html>
+

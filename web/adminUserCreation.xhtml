@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title> admin user creation </title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: large; background-color: #99ff99">
+         <div>
+                <p:spacer height="100px" /> <!-- this is a space  -->
+            </div>
+        <div align="center">
+            <h:form style="background: #99ff99;" >
+                <b:messages id="msg2" style="background: white; color: red" />
+
+                <p:panel  header="admin users creation" style=";width:530px; background: #ccccff; align-self: center;animation-fill-mode: both;font-size: smaller">
+
+
+                    <p:separator/>
+
+                    <h4 style="background: #ffffff">
+                        Supply username and password to create an admin user
+                    </h4>
+                    <p:separator/>
+
+                    <div align="center">
+
+                        <p:panel  header="admin user creation" style="width: 360px; height: 180px;  background: #cc0000; align-self: center;animation-fill-mode: both">
+                            <!-- <p:growl id="msg" showDetail="true" sticky="true"/> -->
+ 
+                            <h:panelGrid columns="2" cellpadding="5">
+                                <h:outputLabel for="username" value="Username:" style="color: ghostwhite"/>
+                                <p:inputText id="username" value="#{adminUserCreationBEAN.username}" required="true"/>
+
+                                <h:outputLabel for="password" value="Password:" style="color: ghostwhite"/>
+                                <p:password id="password" value="#{adminUserCreationBEAN.password}" required="true" label="password" />
+
+                                <f:facet name="footer">
+                                    <p:commandButton value="CREATE" ajax="false"  action="#{adminUserCreationBEAN.adminuserCreationMethod()}" update="msg2"/>
+
+                                </f:facet>  
+                            </h:panelGrid>
+
+                        </p:panel>
+                    </div>
+
+                    <p:separator />
+                </p:panel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

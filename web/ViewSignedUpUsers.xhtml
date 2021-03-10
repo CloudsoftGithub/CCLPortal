@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>View SignedUp Users</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="background: #99ff99;font-size: small">
+
+
+        <div align="left">
+            <h:form id="subjtRegForm" enctype="multipart/form-data">
+                <p:panel  id="subjpanel" header="SignedUp Users Display" style="font-size: small;left: 30%; margin-left: -100px; width: 800px;  height: 780px;position: relative;">
+
+
+                    <p:messages id="message" showDetail="false" autoUpdate="true" closable="true" />
+                    <p:growl id="msg" autoUpdate="true" />
+
+                    <p:spacer height="29"></p:spacer>
+
+
+                    <p:dataTable value="#{viewSignedUpUsers.signedUpUsersInfo}"  var="item" paginator="true" rows="5" style="width:780px; height: 780px"
+                                 paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                 rowsPerPageTemplate="30,50,100" > 
+
+                        <f:facet name="header">
+                            <h:outputText value="SignedUp Users Display" ></h:outputText>
+                        </f:facet>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Counter" > </h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.counter}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Username" > </h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.username}"> </h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Password" > </h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.password}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="EmailID" ></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.emailID}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Serial No" ></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.serialNo}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Pin No." ></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.pinNo}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Flag" ></h:outputText>
+                            </f:facet>
+                            <h:outputText value="#{item.flag}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="SignedupDate" />
+                            </f:facet>
+                            <h:outputText value="#{item.signedupDate}"></h:outputText>
+                        </p:column>
+
+                    </p:dataTable>   
+
+
+                </p:panel>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>
+

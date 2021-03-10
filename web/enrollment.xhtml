@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Enrollment</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="background: #b3cee1">
+        <div>
+            <b:form>
+                <ui:include src="header.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container  fluid="false" >
+
+            <div>
+                <p:spacer height="100px" /> <!-- this is a space  -->
+            </div>
+
+            <p:messages  id="msg2" autoUpdate="true" showDetail="false" closable="true"  />
+            
+            <div class="col-xs-12"   style="font-size:  large">
+
+                <b:form id="enrollmentForm" class="col-xs-12" style="background: #5436ea" >
+
+                    <b:panel   style=";height: 950px; align-self: center;animation-fill-mode: both;font-size: smaller; background: none">
+
+                        <b:panel id="subpanel2">
+                            <b:panel id="panel" title="Enrollment Form" style="height: 850px; background: none; align-self: center;animation-fill-mode: both">
+                                <br />
+                                <p:separator />
+
+                                <div class="col-xs-12">
+                                    <b:row>
+                                        <b:column medium-screen="5">
+                                            <b:inputText tooltip="supply your fullname" type="text" value="#{enrollmentBEAN.enroll.fullname}" class="form-control" label="FullName:" placeholder="Fullname (how you want it appear in your certificate)" required="true" requiredMessage="Pls, supply fullname."  />
+                                        </b:column>
+
+                                        <b:column medium-screen="5" offset="1">
+                                            <b:inputText id="emailID" tooltip="supply your e-mail" type="text" value="#{enrollmentBEAN.enroll.email}" class="form-control"  label="E-mail" placeholder="e-mail" required="true" requiredMessage="Pls, supply email" validator-message="Supply a valid e-mail id." >
+                                                <f:validateRegex  pattern="[a-zA-Z0-9_]*[@]{1}[a-zA-Z0-9_]*[.]{1}[a-zA-Z]{2,3}" /> 
+                                            </b:inputText>
+                                        </b:column>
+                                    </b:row>
+
+                                </div>
+
+
+                                <div class="col-xs-12">
+                                    <b:row>
+                                        <b:column medium-screen="5">
+                                            <b:inputText tooltip="supply your phone no." type="text" value="#{enrollmentBEAN.enroll.phone}" maxlength="11" validator-message="Pls, suppy a correct phone no." class="form-control" label="Phone no." placeholder="phone no" required="true" requiredMessage="Pls, supply phone no." >
+                                                <f:validateRegex  pattern="[0-9]*{1}{2,3}" /> 
+                                            </b:inputText>
+                                        </b:column>
+
+                                        <b:column medium-screen="5" offset="1">
+                                            <b:selectOneMenu id="program" label="Program:" value="#{enrollmentBEAN.enroll.program}" class="form-control" required="true" required-message="Pls, select program." style="background: gray; color: #ffffff" >
+                                                <f:selectItem itemLabel="Select program" itemValue=""  />
+                                                <f:selectItem itemLabel="Advanced ICT Training" itemValue="Advanced ICT Training" />
+                                                <f:selectItem itemLabel="Medium ICT Training" itemValue="Medium ICT Training" />
+                                                <f:selectItem itemLabel="Basic ICT Training" itemValue="Basic ICT Training" />
+                                                <f:selectItem itemLabel="Java SE Training" itemValue="Java SE Training" />
+                                                <f:selectItem itemLabel="Java EE Training" itemValue="Java EE Training" />
+                                                <f:selectItem itemLabel="C# Programming Training" itemValue="C# Programming Training" />
+                                                <f:selectItem itemLabel="C++ Programming Training" itemValue="C++ Programming Training" />
+                                                <f:selectItem itemLabel="C Programming Training" itemValue="C Programming Training-008" />
+                                                <f:selectItem itemLabel="Phyton Programming Training" itemValue="Phyton Programming Training" />
+                                                <f:selectItem itemLabel="PHP Programming Training" itemValue="PHP Programming Training" />
+                                                <f:selectItem itemLabel="PHP with CodeIgniter" itemValue="PHP with CodeIgniter" />
+                                                <f:selectItem itemLabel="Other Programming Languages" itemValue="Other Programming Languages" />
+                                                <f:selectItem itemLabel="Bootfaces Training" itemValue="Bootfaces Training" />
+                                                <f:selectItem itemLabel="JSF/Primefaces Training" itemValue="JSF/Primefaces Training" />
+                                                <f:selectItem itemLabel="Android Dev. Training" itemValue="Android Dev. Training" />
+                                                <f:selectItem itemLabel="Software Dev. Traing" itemValue="Software Dev. Traing" />
+                                                <f:selectItem itemLabel="Stand-alone Systems" itemValue="Stand-alone Systems" />
+                                                <f:selectItem itemLabel="Network-based Systems" itemValue="Network-based Systems" />
+                                                <f:selectItem itemLabel="AWS Cloud Dev. Training" itemValue="AWS Cloud Dev. Training" />
+                                                <f:selectItem itemLabel="Jelastic Cloud Dev. Training" itemValue="Jelastic Cloud Dev. Training" />
+                                                <f:selectItem itemLabel="General Cloud Hosting Training" itemValue="General Cloud Hosting Training" />
+                                                <f:selectItem itemLabel="Statistical Packages Training" itemValue="Statistical Packages Training" />
+                                                <f:selectItem itemLabel="Diploma In Microsoft Packages" itemValue="Diploma In Microsoft Packages" />
+                                                <f:selectItem itemLabel="Diploma In Microsoft Excel" itemValue="Diploma In Microsoft Excel" />
+                                                <f:selectItem itemLabel="Advanced Excel Training" itemValue="Advanced Excel Training" />
+
+                                                <f:selectItem itemLabel="Web Development Training" itemValue="Web Development Training"/>
+                                                <f:selectItem itemLabel="Cyber Security" itemValue="Cyber Security"/>
+                                                <f:selectItem itemLabel="Webinar Training" itemValue="Webinar Training"/>
+                                                <f:selectItem itemLabel="NYSC Trainee" itemValue="NYSC Trainee"/>
+                                            </b:selectOneMenu>
+                                        </b:column>
+                                    </b:row>
+
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <b:row>
+                                        <b:column medium-screen="5">
+                                            <b:inputText id="userName" tooltip="supply your username" type="text" value="#{enrollmentBEAN.enroll.username}" class="form-control" label="Username:" placeholder="username" required="true" requiredMessage="Pls, supply username." />      
+                                        </b:column>
+
+                                        <b:column medium-screen="5" offset="1">
+                                            <b:inputSecret id="password" tooltip="supply your password" type="text" value="#{enrollmentBEAN.enroll.password}" class="form-control" label="Password:" placeholder="password" required="true" requiredMessage="Pls, supply password." />      
+
+                                        </b:column>
+                                    </b:row>
+
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <b:row>
+                                        <b:column medium-screen="5">
+                                            <b:inputSecret tooltip="PIN no" type="text" value="#{enrollmentBEAN.enroll.pinNo}" class="form-control" label="PIN no." placeholder="PIN no." required="true" requiredMessage="Pls, supply PIN no." />
+                                        </b:column>
+
+                                        <b:column medium-screen="5" offset="1">
+                                            <b:inputText tooltip="Serial no" type="text" value="#{enrollmentBEAN.enroll.serialNo}" class="form-control" label="Serial no." placeholder="Serial no." required="true" requiredMessage="Pls, supply Serial no." />
+
+                                        </b:column>
+                                    </b:row>
+
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <b:row>
+                                        <b:column medium-screen="5">
+                                            <p:commandButton  style="font-family: sans-serif; font-size: x-large" value="Register"  action="#{enrollmentBEAN.enrollmentMthd()}" ajax="false" update="msg2"/>
+                                        </b:column>
+
+                                        <b:column medium-screen="5" offset="1">
+
+                                        </b:column>
+                                    </b:row>
+
+                                </div>
+
+
+                            </b:panel>
+
+                        </b:panel> <!-- SubPanel2-->
+
+                    </b:panel>
+                </b:form>
+            </div>
+
+
+
+        </b:container>
+
+        <div>
+            <b:form>
+                <ui:include src="footera.xhtml"/>
+            </b:form>
+        </div>
+    </h:body>
+</html>
+

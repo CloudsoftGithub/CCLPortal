@@ -1,0 +1,4 @@
+.noScollayoutUnit.css .ui-layout-unit-content{
+    overflow-x: scroll;
+    border: 0;
+     }

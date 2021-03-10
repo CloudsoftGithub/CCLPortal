@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <title>Signup</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body style="font-size: small; background-color: #33ff33">
+        <div align="center" style="background: #ccccff">
+            <b:messages id="msg2" showDetail="false" style="background: #ff0066; color: black; font-family: sans-serif" show-icon="true" />
+            <b:growl id="msg" showDetail="false" style="background: #ff0066; color: white" />
+
+            <h:form id="signupForm" style="background: #ccffcc">
+                <!-- <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" /> -->
+
+
+                <p:separator/>
+                <p:panel id="subpanel1" style="background:  #ccccff">
+                    <p:panelGrid columns="2">
+                        <p:panel style="align-self: auto; background: red" >
+                            <div align="left">
+                                <h:form  style="width:360px;background: #99ff99">
+                                    <p:spacer width="25px"/>
+                                    <h:panelGrid columns="2">
+
+
+                                        <div align="center">
+                                            <div align="center">
+                                                <h:outputText value="Please, obtain your card from our accreditated vendors. " style="font-family: cursive; background: #99cc00; font-size: small"></h:outputText>
+                                                <br/>
+                                                <h:outputText value="Sample of Our Genuine Scratch Card " style="font-family: cursive; background: #D20005; font-size: larger"></h:outputText>
+                                                <br/>
+
+                                            </div>
+
+                                            <p:spacer width="25px"/>
+                                            <div align="center" style="background: ">
+                                                <p:graphicImage name="/images/FRONT VIEW.gif" />
+                                            </div>
+
+                                            <div align="center" style="background: ">
+                                                <p:graphicImage name="/images/BACK VIEW.gif" />
+                                            </div>
+                                        </div>
+
+                                    </h:panelGrid>
+
+                                </h:form>
+                            </div>
+
+                        </p:panel >
+
+                        <p:panel id="subpanel2" style="background:  red">
+                            <b:panel id="panel" title="SignUp Form" style="height: 480px;width: 360px; background: #adadad; align-self: center;animation-fill-mode: both">
+
+                                <h:panelGrid columns="2" cellpadding="4" >
+                                    <h:outputLabel for="username" value="Username: " style="color: black"/>
+                                    <p:inputText id="username"  value="#{signupBean.signp.username}" style="background: #cce7c4" size="20" required="true"/>
+
+                                    <h:outputLabel for="pwd1" value="Password: " style="color: black"/>
+                                    <p:password id="pwd1" value="#{signupBean.signp.password}" required="true" style="background: #cce7c4" size="20" feedback="false" match="pwd2" label="Password maching error, pls supply matching password" />
+
+                                    <h:outputLabel for="pwd2" value="Confirm Password:" style="color: black"/>
+                                    <p:password id="pwd2" value="#{signupBean.signp.confirmPassword}" required="true" style="background: #cce7c4" size="20" feedback="false" label="Password maching error, pls supply matching password"/>
+
+                                    <p:outputLabel for="email" value="Email ID:" style="color: black"/>
+                                    <p:inputText  id="email" value="#{signupBean.signp.email}" size="20"  style="background: #cce7c4" required="true" validatorMessage="Pls, provide a valid E-mail ID of type:
+                                                  myemail@domain.com!, you may be contacted via your email" onkeyup="true" > 
+                                        <f:validateRegex  pattern="[a-zA-Z0-9_]*[@]{1}[a-zA-Z0-9_]*[.]{1}[a-zA-Z]{2,3}" /> </p:inputText>
+
+
+                                    <f:facet name="footer">
+                                        <p:panel id="panels"  style="background: #990099">
+                                            <h3 style=" color: #33ffff"> Scratch Card Details</h3>
+
+                                            <h:panelGrid columns="2" cellpadding="3" >
+                                                <h:outputLabel for="PINno" value="PIN Number:" style="color: white"/>
+                                                <p:password id="PINno"  value="#{signupBean.signp.pinNo}" style="background: #ffffff" size="20" rendered="true"/>
+
+                                                <h:outputLabel for="serialNo" value="Serial No:" style="color: white"/>
+                                                <p:inputText id="serialNo" value="#{signupBean.signp.serialNo}" style="background: #ffffff" size="20" required="true" />
+
+                                            </h:panelGrid> 
+
+                                            <f:facet name="footer">
+                                                <p:commandButton style="color: #D20005;font-size: small" resetValues="true" ajax="false" value="SignUp"  actionListener="#{signupBean.signupMethod()}" update="panel,msg2,msg" /> 
+
+                                            </f:facet>  
+                                        </p:panel>
+
+                                    </f:facet>  
+
+
+                                </h:panelGrid>
+
+                            </b:panel>
+ 
+                        </p:panel> <!-- SubPanel2-->
+                    </p:panelGrid>
+                </p:panel>
+
+                <div>
+                    <h:outputText value="Do you need our card? contact us via: cloudsoftconsultingltd@gmail.com, or call our help line: +234 9038605224 " style="font-family: sans-serif; background: #ff9999; font-size: x-large"></h:outputText>
+                    <br/>
+                    <h:link style="color: #330033;font-family: fantasy;font-size: xx-large" value="click to drop comment" outcome="ContactUs.xhtml" />  
+                </div>
+
+            </h:form>
+        </div>
+        <p:separator/>
+        <p:spacer width="40px"/>
+        <div align="center">
+            <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to CTB homepage" outcome="cbtIndex" />  
+        </div>
+    </h:body>
+</html>
+

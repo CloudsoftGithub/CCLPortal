@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Contact Us</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+   
+    <h:body>
+  
+        <b:container>
+            <b:form>
+
+                <div align="center">
+
+                    <b:form id="commentForm" style="background: #7d8896;" >
+
+                        <b:panel id="commentPanel" title="Contact Cloudsoft Consulting Limited" style=";height: 850px; width: 580px; background: #7d8896; align-self: center;animation-fill-mode: both;font-size: smaller">
+                        
+
+                            <div align="left" style="font-size: small">
+                                <p:panel  >
+                                    <!--    <b:messages id="messages" showDetail="false"  style="font-size: large; color: black" /> -->
+
+                                    <b:form>
+                                        <div align="center" style="background: lightcoral">
+
+                                            <p:separator />
+                                            <div  align="center">
+                                                <h4 style="background: #ccccff; font-family: 'Kanit', sans-serif">
+                                                    Company Domain:
+                                                </h4>
+                                                <h4 style="color: white; font-family: 'Kanit', sans-serif">
+                                                    www.cloudsoftconsulting.com.ng <br/>
+                                                </h4>
+
+                                            </div>
+                                            <div align="center">
+                                                <h4 style="background: #ccccff; font-family: 'Kanit', sans-serif">
+                                                    Company Email:
+                                                </h4>
+                                                <h4 style="color: white; font-family: 'Kanit', sans-serif">
+                                                    cloudsoftconsultingltd@gmail.com <br/>
+                                                </h4>
+
+                                                <p:separator />
+                                            </div>
+
+                                            <div align="center">
+                                                <h4 style="background: #ccccff; font-family: 'Kanit', sans-serif">
+                                                    Customer Care Line: 
+                                                </h4>
+                                                <h4 style="color: white; font-family: 'Kanit', sans-serif" align="center"> +234 9038605224</h4>
+
+                                                <p:separator />
+                                            </div>
+                                        </div>
+                                    </b:form>
+
+
+                                    <b:growl id="msg1"  showDetail="false"/>
+
+
+                                    <div align="center" style="background: lightgray">
+                                        <h3 style="font-family: 'Kanit', sans-serif"> Send message via this form: </h3>
+
+                                        <h:panelGrid columns="1" cellpadding="4" >
+                                            <b:panel style="background: #ccccff" >
+                                                <h:panelGrid columns="1" cellpadding="1" >
+                                                    <h:outputLabel for="interestedIn" value="Interested in: " style="color: #3333ff" />
+                                                    <h:selectOneMenu id="interestedIn" value="#{contactUs.interestedIn}" required="true" requiredMessage="Pls, select a topic." style="background: #cce7c4">
+                                                        <f:selectItem itemLabel="Select Topic" itemValue="" noSelectionOption="true"/>
+                                                        <f:selectItem itemLabel="Software Development" itemValue="Software Development" />
+                                                        <f:selectItem itemLabel="Your already Developed App" itemValue="Your already Developed App" />
+                                                        <f:selectItem itemLabel="Software Development" itemValue="Software Development" />
+                                                        <f:selectItem itemLabel="Your already Developed App" itemValue="Your already Developed App" />
+                                                        <f:selectItem itemLabel="Desktop application" itemValue="Desktop application" />
+                                                        <f:selectItem itemLabel="android application" itemValue="android application" />
+                                                        <f:selectItem itemLabel="android applicationt" itemValue="android applicationt" />
+                                                        <f:selectItem itemLabel="Network-based Application" itemValue="Network-based Application" />
+                                                        <f:selectItem itemLabel="Simple Application" itemValue="Simple Application" />
+                                                        <f:selectItem itemLabel="Website design" itemValue="Website design" />
+                                                        <f:selectItem itemLabel="Advance ICT Training" itemValue="Advance ICT Training" />
+                                                        <f:selectItem itemLabel="Supply of Computing/Networking Devices" itemValue="Supply of Computing/Networking Devices" />
+                                                        <f:selectItem itemLabel="Installation/config. of Computing Devices" itemValue="Installation/config. of Computing Devices" />
+                                                        <f:selectItem itemLabel="Installation/Config. of Computing Devices" itemValue="Installation/config. of Computing Devices" />
+                                                        <f:selectItem itemLabel="Installation/Config. of Network Devices" itemValue="Installation/Config. of Network Devices" />
+                                                        <f:selectItem itemLabel="Cloud Development" itemValue="Cloud Development" />
+                                                        <f:selectItem itemLabel="Cloud Hosting with Jealastic CSP" itemValue="Cloud Hosting with Jealastic CSP" />
+                                                        <f:selectItem itemLabel="Cloud Hosting with AZURE CSP" itemValue="Cloud Hosting with AZURE CSP" />
+                                                        <f:selectItem itemLabel="Cloud Hosting with Google CSP" itemValue="Cloud Hosting with Google CSP" />
+                                                        <f:selectItem itemLabel="CLoud Migration" itemValue="CLoud Migration" />
+                                                        <f:selectItem itemLabel="CBT" itemValue="CBT" />
+                                                        <f:selectItem itemLabel="Just wanted to make comment" itemValue="Just wanted to make comment" />
+                                                        <f:selectItem itemLabel="Other services not mentioned here" itemValue="Other services not mentioned here" />
+
+                                                    </h:selectOneMenu>
+
+                                                    <h:outputLabel for="Name" value="Name: " style="color: #3333ff;"/>
+                                                    <p:inputText id="Name"  value="#{contactUs.name}" style="background: #cce7c4" size="20" required="true" requiredMessage="Pls, supply name."/>
+
+                                                    <h:outputLabel for="email" value="E-mail: " style="color: #3333ff;"/>
+
+
+                                                    <p:inputText  id="email" value="#{contactUs.email}"  size="20"  style="background: #cce7c4" required="true" requiredMessage="Pls, supply a valid email id" validatorMessage="Pls, provide a valid E-mail ID of type:
+                                                                  myemail@domain.com!, you may be contacted via your email" onkeyup="true" > 
+                                                        <f:validateRegex  pattern="[a-zA-Z0-9_]*[@]{1}[a-zA-Z0-9_]*[.]{1}[a-zA-Z]{2,3}" /> </p:inputText>
+
+
+                                                    <h:outputLabel for="Phone" value="Phone: " style="color: #3333ff;"/>
+                                                    <p:inputText id="Phone"  value="#{contactUs.phone}" style="background: #cce7c4" size="20" required="true" requiredMessage="Pls, supply a valid phone number."/>
+
+                                                    <p:inputTextarea id="clientComment" value="#{contactUs.comment}" placeholder="Pls, enter your comments here!" requiredMessage="Pls, enter your comments in the area provided." autoResize="true" cols="50" rows="5" maxlength="100" required="true"/>
+                                                    <p:commandButton value="Submit" ajax="false" action="#{contactUs.sendMailMethod()}" style="background: #ff3333" update="msg1"/>
+
+                                                </h:panelGrid>
+                                            </b:panel>
+
+                                        </h:panelGrid>
+                                    </div>
+
+                                </p:panel>
+
+                            </div>
+
+                            <h:form >
+                                <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="index" />  
+                                <p:separator style="background: #ffffff;"/>
+
+                                <h:form style="background: #ccffcc">
+                                    <h10 align="center" >
+                                        Developed by  Cloudsoft Consulting Limited,<br/>
+                                        Copyright © 2021 <br/>
+                                        All Rights Reserved.<br/>
+                                    </h10>
+                                </h:form>
+                            </h:form>
+                        </b:panel>
+
+
+                    </b:form>
+                </div>
+            </b:form>
+        </b:container>
+    </h:body>
+</html>
+

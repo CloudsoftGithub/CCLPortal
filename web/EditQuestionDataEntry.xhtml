@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edit Question DataEntry</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: #99ff99;">
+
+        <div align="left">
+
+            <h:form id="EditquestiondataentryForm" style=";align-items: flex-start;">
+                <div align="center">
+                    <br/>
+                    <p:spacer width="25px"/>
+                    <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+                </div>
+
+                <p:panel  id="editQuestionDEntryPanel" header="Edit Question Data Entry " style="font-size: smaller;left:23%; margin-left: -100px; width: 1150px; position: relative; background: #ccffcc">
+
+
+                    <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+
+                    <h:panelGrid columns="3"  cellpadding="1">
+                        <h:outputLabel for="textMode" value="Text Mode " style="background: #999999"/>
+                        <p:spacer  height="29"></p:spacer>
+                        <br/>
+
+                        <h:outputLabel for="Subjectid" value="Subject ID: " style="color: #333333"/>
+                        <p:inputText id="Subjectid" value="#{questiondataentrySearchBean.sid}" required="true" />
+                        <p:commandButton value="SearchSubjectInfo" action="#{questiondataentrySearchBean.subjectIfoDMethod()}" ajax="false" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Subject" value="Subject: " style="color: #333333"/>
+                        <h:inputText id="Subject" value="#{questiondataentrySearchBean.subject}"  style="background: #cccccc"/>
+                        <br/>
+                        <h:outputLabel for="Year" value="Year: " style="color: #333333"/>
+                        <h:outputText id="Year" value="#{questiondataentrySearchBean.year}"  style="background: #cccccc"></h:outputText>
+                        <br/>
+                        <h:outputLabel for="Time" value="Time: " style="color: #333333"/>
+                        <h:outputText id="Time" value="#{questiondataentrySearchBean.time}" style="background: #cccccc"></h:outputText>
+                        <br/>
+
+                        <h:outputLabel for="questionNo" value="Question No: " />
+                        <h:inputText id="questionNo" value="#{questiondataentrySearchBean.questionNo}"  required="true" style="background: #cccccc"/>
+
+                        <br/> 
+                    </h:panelGrid>
+
+                    <p:separator/>
+
+                    <h:panelGrid columns="2"  cellpadding="1">
+
+                        <h:outputLabel for="instructions" value="Instructions: " /> 
+                        <h:outputText escape="false" id="instructions" value="#{questiondataentrySearchBean.instructions}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Question" value="Question: " />
+                        <h:outputText escape="false" id="Question" value="#{questiondataentrySearchBean.question}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Choicea" value="Choice A:" />
+                        <h:outputText escape="false" id="Choicea" value="#{questiondataentrySearchBean.choiceA}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Choiceb" value="Choice B:" />
+                        <h:outputText escape="false" id="Choiceb" value="#{questiondataentrySearchBean.choiceB}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Choicec" value="Choice C:" />
+                        <h:outputText escape="false" id="Choicec" value="#{questiondataentrySearchBean.choiceC}" style="background: #cccccc"></h:outputText>
+
+
+                        <h:outputLabel for="Choiced" value="Choice D:" />
+                        <h:outputText escape="false" id="Choiced" value="#{questiondataentrySearchBean.choiceD}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="Choicee" value="Choice E:" />
+                        <h:outputText escape="false" id="Choicee" value="#{questiondataentrySearchBean.choiceE}" style="background: #cccccc"></h:outputText>
+
+                        <h:outputLabel for="CorrectAnswer" value="Correct Answer: " />
+                        <h:outputText escape="false" id="CorrectAnswer"   value="#{questiondataentrySearchBean.correctAnswer}"  ></h:outputText>
+
+                        <p:spacer width="40px"/>
+
+                    </h:panelGrid>
+
+
+                    <p:spacer height="29"></p:spacer>
+
+
+                    <br/>
+                    <p:spacer width="25px"/>
+
+
+                </p:panel>
+
+            </h:form>
+
+            <h:form>
+                <p:panel style="font-size: smaller;left:23%; margin-left: -100px; width: 1150px; position: relative; background: #ccffcc" header="Editing Section for the Question: Please, enter the correct text you wanted in the appropriate column">
+
+                    <h:panelGrid columns="2"  cellpadding="1">
+
+                        <h:outputLabel for="instructions" value="Instructions: " /> 
+                        <p:editor id="instructions" value="#{questiondataentrySearchBean.myInstructions}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="Question" value="Question: " />
+                        <p:editor id="Question" value="#{questiondataentrySearchBean.myQuestion}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="Choicea" value="Choice A:" />
+                        <p:editor id="Choicea" value="#{questiondataentrySearchBean.myChoiceA}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="Choiceb" value="Choice B:" />
+                        <p:editor id="Choiceb" value="#{questiondataentrySearchBean.myChoiceB}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="Choicec" value="Choice C:" />
+                        <p:editor id="Choicec" value="#{questiondataentrySearchBean.myChoiceC}"    width="450" height="150" style="background: #cccccc"/>
+
+
+                        <h:outputLabel for="Choiced" value="Choice D:" />
+                        <p:editor id="Choiced" value="#{questiondataentrySearchBean.myChoiceD}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="Choicee" value="Choice E:" />
+                        <p:editor id="Choicee" value="#{questiondataentrySearchBean.myChoiceE}"    width="450" height="150" style="background: #cccccc"/>
+
+                        <h:outputLabel for="CorrectAnswer" value="Correct Answer: " />
+                        <h:inputText  id="CorrectAnswer"   value="#{questiondataentrySearchBean.myCorrectAnswer}"  size="1" />
+
+                        <p:commandButton value="EditSubjInfo" action="#{questiondataentrySearchBean.editsubjectIfoDMethod()}" ajax="false" style="color: white; background: #993300"/>
+
+                        <p:spacer width="40px"/>
+                        <div align="center">
+                            <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+                        </div>
+
+                    </h:panelGrid>
+                </p:panel>
+
+            </h:form>
+
+        </div>
+
+    </h:body>
+</html>
+

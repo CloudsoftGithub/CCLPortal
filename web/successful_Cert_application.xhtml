@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title> Successful Cert-Application</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+   </h:head>
+
+    <h:body  style="font-size: medium;background: white" >
+        <b:container fluid="true">
+ 
+            <div align="center" class="col-sm-2">
+
+            </div>
+
+            <div id="Print" align="center" class="col-sm-8">
+                <p:spacer height="100px" />
+ 
+                <b:form   >
+                    <b:panel id="SuccessfulCer_application" title="Certificate Application Confirmation" style=";width: 600px; background: lightskyblue; align-self: center;animation-fill-mode: both;font-size: smaller">
+                        <!--- Printing command  -->
+                        <p:commandButton value="Print" type="button" icon="ui-icon-print" style="display:block;margin-bottom: 20px;background: wheat">
+                            <p:printer  target="SuccessfulCer_application" />
+                        </p:commandButton>
+                        
+                        <div align="center">
+                            <b:form>
+                                <h4 align="center" style="color: black">You successfully applied for a certificate, with the username: <h3 style="color: red; font-family: fantasy; font-size: xx-large"> '#{certApplicationBEAN.username}'</h3> </h4>
+                                <h4 align="center" style="color: black">Your application details have been sent to your email address.</h4>
+                                 <h4 align="center" style="color: black">  Thank you.</h4>
+
+                                <p:separator />
+                            </b:form>  
+                        </div>
+  
+                        <p:separator />
+                    </b:panel>
+                </b:form>
+            </div>
+
+            <div align="center" class="col-sm-2">
+
+            </div>
+        </b:container>
+    </h:body>
+</html>
+

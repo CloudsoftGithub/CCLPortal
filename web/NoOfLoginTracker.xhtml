@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>NoOfLoginTrackerPage</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+         <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: smaller; background-color: #ccccff">
+        <div align="center">
+            <h:form style="background: #ccccff;" >
+                <p:panel  header="MyJamb CBT Practice Portal" style="height: 700px;width: 580px; background: #ccffcc; align-self: center;animation-fill-mode: both;font-size: smaller">
+                    <h:form>
+                        <br/> <br/>
+
+                        <div align="center" style="color: white; background: red; font-size: x-large">
+                            <h:outputText value="Dear User: "></h:outputText>
+                            <h:outputText  value="#{loginBean.signin.username}" >  </h:outputText>
+
+
+
+                        </div>
+
+                        <p style="font-size: x-large; font-family: cursive;color: #3333ff" >
+                            Dear Subscriber, you exceeded the no. of login allocated to you<br/> (written on the scratch card). <br/> 
+                            Please, <br/>  purchase another <br/> card to practice more! 
+                        </p>
+
+
+                        <p style="font-size: x-large; font-family: sans-serif" >
+                            you may contact any of our vendors 
+                        </p>
+
+                        <p style="font-size: x-large; font-family: sans-serif" >
+
+                            or call the Help Line:  <br/>
+                            +234 9065306495
+                        </p>
+
+                    </h:form>
+
+                    <p:spacer height="300px"/>
+
+                    <h:link style="color: #3333ff;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to home page" outcome="cbtIndex" />  
+
+                    <p:separator/>
+
+                    <p:separator/>
+
+
+
+                    <p:separator />
+
+
+                </p:panel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

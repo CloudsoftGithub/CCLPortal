@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title> enrolledUsersLogin</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+    <h:body style="font-size: small; background: #667bcc">
+
+        <div>
+            <b:form>
+                <ui:include src="header.xhtml"/>
+            </b:form>
+        </div>
+
+        <b:container  fluid="false" >
+
+            <div>
+                <p:spacer height="100px" /> <!-- this is a space  -->
+            </div>
+
+            <div class="col-sm-2">
+                <!--Jus a space -->
+            </div>
+            <div class="col-sm-8">
+                <b:message id="msg1" />
+
+
+                <b:form style="background: #d4d0e7">
+                    <b:panel style="background: #701ae6" >
+                        <b:panel  style=" background: #ffffff;font-size: large">
+                            <h3 align="center"> Users Login</h3>
+
+                            <p:separator style="background: black"/>
+
+                            <div align="left">
+                                <b:panel  >
+
+                                    <b:growl id="msg" />
+                                    <h:form>
+                                        <h4 align="center" style="color: #333333"> Supply username and password to login.</h4>
+                                    </h:form>  
+
+                                    <b:inputText id="username" label="Username" value="#{enrolledUserLoginBean.login.username}" required="true"/>
+
+
+                                    <b:inputSecret id="password" label="Password:" value="#{enrolledUserLoginBean.login.password}"  required="true"  />
+
+                                    <f:facet name="footer">
+                                        <p:commandButton value="login"   action="#{enrolledUserLoginBean.loginMethd()}"  ajax="false" update="msg1"/>
+
+                                    </f:facet>  
+
+                                </b:panel>
+                            </div>
+
+                            <p:separator />
+
+                            <div align="center">
+                                <h:link style="color: black; font-size: x-large; font-family: sans-serif" value="Forgot password?"  outcome="forgotpassword.xhtml"/>
+                            </div>
+                            <p:separator />
+                            <div align="right">
+                                <p:link style="color: #ccccff; background:  grey" value="Admin"  outcome="adminHome.xhtml"/>
+                            </div>
+
+                        </b:panel>
+                    </b:panel>
+                </b:form>
+            </div>
+
+            <div class="col-sm-2">
+                <!--Jus a space -->
+            </div>
+
+        </b:container>
+    </h:body>
+</html>
+

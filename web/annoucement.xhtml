@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>announcement</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <!-- Google web font -->
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+
+        <link href="https://fonts.googleapis.com/css?family=Anton&amp;subset=latin-ext" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin-ext" rel="stylesheet"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700&amp;subset=latin-ext" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand&amp;subset=latin-ext" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"></link>
+
+
+        <!-- style css -->
+        <link href="css/style.css" rel="stylesheet"></link>
+        <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body style="font-size: small; background: lightblue">
+
+
+        <div>
+            <b:form>
+                <ui:include src="headerCCLAdmin.xhtml"/>
+            </b:form>
+        </div>
+
+
+
+        <b:container  fluid="false" >
+            <div  >
+                <p:spacer height="10px" /> <!-- this is a space  -->
+            </div>
+
+            <b:column class="col-sm-8" offset="2">
+                <b:form id="announcementForm" >
+
+                    <div class="col-sm-8"  >
+                        <h2 align="left" style="font-family: 'Anton', sans-serif;; color: blue;"> CCL Portal |  Public Announcement  </h2>
+                        <b:panel id="announcementPanel" title="announcement"  >
+                            <b:messages  id="m1"/>
+
+                            <!--- row one -->
+                            <b:row>
+                                <b:column >
+                                    <h4 style="color: black; font-family: 'Kanit', cursive;">Please, note that the announcement you publicize via this window is going to be visible by all CCL students.</h4>
+                                    <h:outputText escape="false" value=""/>
+                                    <p:inputTextarea class="form-control" rows="8" cols="79"  value="#{announcementBEAN.announcement}" required="true" requiredMessage="Please, supply the needed annoucement in the textarea below. "/>
+                                </b:column>
+                                <b:column >
+                                    <p:commandButton  style="background: blue; color: whitesmoke" action="#{announcementBEAN.publicizeAnnouncement()}"  value="Save " ajax="false" process="@form" update="m1"/>
+                                </b:column>
+                            </b:row>
+
+                            <!--- row two -->
+                        </b:panel>
+                    </div>
+
+
+                </b:form>
+
+            </b:column>
+
+
+        </b:container>
+
+        <!-- adding the footer -->
+        <div align="center">
+            <h:form style="background: #336600;" >
+                <ui:include src="footera.xhtml"/>
+            </h:form>
+        </div>
+
+    </h:body>
+</html>
+

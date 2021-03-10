@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>cert-application</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+
+
+    <h:body style="background:  #6952dd">
+
+        <div>
+            <b:form>
+                <ui:include src="headerenrolledUsersDashboard.xhtml"/>
+            </b:form>
+        </div>
+ 
+        <b:container fluid="false" >
+            <div>
+                <p:spacer height="20px" /> <!-- this is a space  -->
+            </div>
+            
+            <div class="col-sm-3" align="center">
+                <!-- space -->
+            </div>
+
+            <div class="col-sm-6" align="center">
+                
+                <b:messages id="msg1" style="font-size: larger" />
+               
+                <b:form  id="certAppform" style="background: #ccccff;" >
+
+                    <b:panel id="certAppPanel"  style="background:  darksalmon; color: black; font-size: medium">
+                        <h3  align="center" style="font-family: 'Pacifico', monospace; color: black">Apply for Cert. here</h3>
+                        <br style="height: 30px"  />
+
+                        <div  style="width: 120px" align="center">
+                            <h4 align="left" style="color: #cc00cc"> <h:inputText  id="myusername" value="#{enrolledUserLoginBean.login.username}" size="5" style="background: #ccccff; font-family: cursive;align-content: center" required="true" requiredMessage="Pls, supply username by loggin again"  />   </h4>               
+                        </div>
+                        <p:separator />
+                        <div align="left">
+                            <h4 style="color: wheat; font-style:oblique ;font-family:  'Kanit', sans-serif;">Certificate Application Note:</h4>
+
+                            <ol type="1" style="font-family: sans-serif; color: black">
+                                <li>                <h4 style="color: black">I, with the username  displayed above wish to apply for CCL certificate for the course I have offered.</h4></li>
+                                <li>                <h4 style="color: black">I do hope that the management of CCL will consider my request.</h4> </li>
+                                <li>                <h4 style="color: black">Thank you. </h4>   </li>
+                            </ol>
+                            <p:separator  />
+                            <p:commandButton  style="width: 300px; height: 100px; font-size: xx-large; background: greenyellow; color: black" value="Apply" action="#{certApplicationBEAN.applyfor_certMthd()}" ajax="false" update="msg1"/> 
+
+                        </div>
+
+                    </b:panel>
+                </b:form>
+            </div>
+
+            <div class="col-sm-3" align="center">
+                <!-- space -->
+            </div>
+
+        </b:container>
+    </h:body>
+</html>
+

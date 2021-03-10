@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Question Data Entry</title>
+        <link rel="shortcut icon"  href="#{request.contextPath}/resources/images/logoicon.ico" type="image/x-icon"/> 
+ <script data-ad-client="ca-pub-9824241097560337" async='async' src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+        </script>
+    </h:head>
+    <h:body style="background: #99ff99;">
+
+        <div align="left">
+
+            <h:form id="questiondataentryForm" style=";align-items: flex-start;">
+                <div align="center">
+                    <br/>
+                    <p:spacer width="25px"/>
+                    <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+                </div>
+
+                <p:panel  id="QuestionDEntryPanel" header="Question Data Entry - Text Mode" style="font-size: smaller;left:23%; margin-left: -100px; width: 1150px; position: relative; background: #ccffcc">
+
+
+                    <p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+
+                    <h:panelGrid columns="3"  cellpadding="1">
+                        <h:outputLabel for="textMode" value="Text Mode " style="background: #999999"/>
+                        <p:spacer  height="29"></p:spacer>
+                        <br/>
+
+                        <h:outputLabel for="Subjectid" value="Subject ID: " style="color: #333333"/>
+                        <p:inputText id="Subjectid" value="#{questiondataentrySearchBean.sid}" required="true" />
+                        <p:commandButton value="Search" ajax="false" action="#{questiondataentrySearchBean.subjectSearchDMethod()}" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Subject" value="Subject: " style="color: #333333"/>
+                        <h:inputText id="Subject" value="#{questiondataentrySearchBean.subject}"   style="background: #cccccc"/>
+                        <br/>
+                        <h:outputLabel for="Year" value="Year: " style="color: #333333"/>
+                        <h:outputText id="Year" value="#{questiondataentrySearchBean.year}"  style="background: #cccccc"> </h:outputText>
+                        <br/>
+                        <h:outputLabel for="Time" value="Time: " style="color: #333333"/>
+                        <h:outputText id="Time" value="#{questiondataentrySearchBean.time}" style="background: #cccccc"> </h:outputText>
+                        <br/>
+
+                        <h:outputLabel for="questionNo" value="Question No: " />
+                        <p:inputText id="questionNo" value="#{questionsDataEntryBEAN.questionsDEntry.questionNo}" required="true"/>
+                        <br/>
+                        <h:outputLabel for="instructions" value="Instructions: " />
+                        <p:editor id="instructions"  value="#{questionsDataEntryBEAN.questionsDEntry.instructions}" width="450" height="150" required="true" />
+
+                        <p:commandButton id="uploadInstruction" value="Upload" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Question" value="Question: " />
+
+                        <p:editor id="Question" value="#{questionsDataEntryBEAN.questionsDEntry.question}" width="450" height="150" />
+
+                        <p:commandButton id="uploadQuestion" value="Upload" style="color: white; background: #993300"/>
+                        
+                         
+ 
+
+                        <h:outputLabel for="Choicea" value="Choice A:" />
+                        <p:editor id="Choicea" value="#{questionsDataEntryBEAN.questionsDEntry.choiceA}" width="450" height="150" required="true" />
+                        <p:commandButton id="uploadChoicea" value="Upload A" style="color: white; background: #993300" />
+
+                        <h:outputLabel for="Choiceb" value="Choice B:" />
+                        <p:editor id="Choiceb"  value="#{questionsDataEntryBEAN.questionsDEntry.choiceB}" width="450" height="150" required="true" />
+                        <p:commandButton id="uploadChoiceb" value="Upload B" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Choicec" value="Choice C:" />
+                        <p:editor id="Choicec"  value="#{questionsDataEntryBEAN.questionsDEntry.choiceC}"  width="450" height="150" required="true" />
+                        <p:commandButton id="uploadChoicec" value="Upload C" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Choiced" value="Choice D:" />
+                        <p:editor id="Choiced"  value="#{questionsDataEntryBEAN.questionsDEntry.choiceD}"  width="450" height="150" required="true" />
+                        <p:commandButton id="uploadChoiced" value="Upload D" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Choicee" value="Choice E:" />
+                        <p:editor id="Choicee"  value="#{questionsDataEntryBEAN.questionsDEntry.choiceE}" width="450" height="150" />
+                        <p:commandButton id="uploadChoicee" value="Upload E" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="Choicef" value="Choice F:" />
+                        <p:editor id="Choicef"  value="#{questionsDataEntryBEAN.questionsDEntry.choiceF}"  width="450" height="150" />
+                        <p:commandButton id="uploadChoicef" value="Upload F" style="color: white; background: #993300"/>
+
+                        <h:outputLabel for="CorrectAnswer" value="Correct Answer: " />
+                        <p:inputText id="CorrectAnswer" size="1"  value="#{questionsDataEntryBEAN.questionsDEntry.correctAnswer}" required="true" />
+                        <p:separator/>
+
+                        <br/>
+                        <p:commandButton value="Save" action="#{questionsDataEntryBEAN.questiondataentryMethod()}" update="dataTabl" ajax="false" resetValues="true" style="color: white; background: #666600"/>
+
+                    </h:panelGrid>
+
+
+                    <p:spacer height="29"></p:spacer>
+
+                    <p:dataTable  id="dataTabl"  editable="true"  value="#{questionsDataEntryTableBEAN.questiondataentryInfo}" var="item" paginator="true" rows="5"
+                                  paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                  rowsPerPageTemplate="3,5,10,20"  > 
+
+
+                        <f:facet name="header">
+                            <h:outputText escape="false" value="Question Data Entry Info" > </h:outputText>
+                        </f:facet>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Subject Id" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.sid}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Question No" > </h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.questionNo}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Instructions" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.instructions}" ></h:outputText>
+                        </p:column>
+
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Question" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.question}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice A" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceA}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice B" > </h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceB}"> </h:outputText>
+                        </p:column> 
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice C" > </h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceC}"> </h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice D" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceD}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice E" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceE}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="Choice F" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.choiceF}"></h:outputText>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText escape="false" value="correct Answer" ></h:outputText>
+                            </f:facet>
+                            <h:outputText escape="false" value="#{item.correctAnswer}"></h:outputText>
+                        </p:column>
+
+                    </p:dataTable>
+                    <br/>
+                    <p:spacer width="25px"/>
+
+                    <div align="center">
+                        <h:link  style="color: #130c04;font-family: fantasy;font-stretch: expanded;font-size: small" value="click here to navigate to Admin Dashboard page" outcome="adminDashboard" />  
+                    </div>
+
+                </p:panel>
+
+            </h:form>
+
+        </div>
+
+    </h:body>
+</html>
+
